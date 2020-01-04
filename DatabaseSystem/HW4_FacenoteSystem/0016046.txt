@@ -1,0 +1,23 @@
+NEW TABLES
+(1) respnse (uid, postid, content, time)
+(2) groups (gid, name, intro, admin)
+(3) join_groups (uid, gid)
+
+MODIFIED OLD TABLES
+(1) articles (..., gid)
+if not post in group gid=NULL
+
+NEW FUNCTION
+(1) point out "common friends" when viewing other users' information
+(2) response
+   (2.1) can response to articles
+   (2.2) can delete his/her own responses
+(3) group
+   (3.1) can post articles in groups
+   (3.2) can delete his/her own articles in groups
+   (3.3) can response to articles in groups
+   (3.4) can delete his/her own responses in groups
+   (3.5) administor of group can add a new member
+   (3.6) administor of group can delete a member
+   (3.7) can create a new group
+   (3.8) point out "friends" in groups' member

@@ -1,0 +1,50 @@
+\chapter{Related Works}
+\section{Vector Space Models}
+\par In order to teach machines to understand words, phrases, sentences, paragraphs and documents, we need to design a representation which they can manipulate. Based on a series of statistical semantics hypotheses, vector space models take event frequencies in a corpus as clues to discover latent semantic, and represent texts as vectors in a vector space for the use of algebraic operations. They derive vectors from a frequency matrix, and the structure of the frequency matrix relates to their scope of application\cite{turney2010vsm}.
+
+\subsection{Similarity of Documents: The Term-document Matrix}
+\begin{hypothesis}{Bag-of-words Hypothesis}{}
+The frequencies of words in a document tend to indicate the relevance of the document to a query\cite{salton1975vsmh1}.---If documents and queries have similar column vectors in a term-document matrix, then they tend to have similar meanings.
+\end{hypothesis}
+\par Vector space models were first introduced for document retrieval where a query is treated as a pseudo-document\cite{salton1975vsmh1}. The relevance of a document to a query can be measured by the similarity of their column vectors in a term-document matrix. Latent semantic indexing (LSI)\cite{deerwester1990lsi} uses the singular value decomposition (SVD) technique to reduce the number of words while preserving the similarity among documents.
+\input{chapters/ch2/figure/freqmat21.tex}
+
+\subsection{Similarity of Words: The Word-context Matrix}
+\begin{hypothesis}{Distributional Hypothesis}{}
+Words that occur in similar contexts tend to have similar meanings\cite{harris1954vsmh2,firth1957vsmh2}.---If words have similar row vectors in a word-context matrix, then they tend to have similar meanings.
+\end{hypothesis}
+\par Researchers look into row vectors in a word-document matrix as word representations. However, documents are not the necessarily optimal contexts to understand word meanings, a word shall be known by the companies it keeps\cite{firth1957vsmh2}. Windows of words are used as contexts in Word2vec\cite{mikolov2013word2vec} and GolVe\cite{pennington2014glove}, and other linguistic information such as grammatical dependencies can also be aggregated\cite{lin1998vsmex2,pado2007vsmex2}.
+\input{chapters/ch2/figure/freqmat22.tex}
+
+\subsection{Similarity of Relations: The Pair-pattern Matrix}
+\begin{hypothesis}{Extended Distributional Hypothesis}{}
+\par Patterns co-occurring with similar word-pairs tend to have similar meanings\cite{lin2001vsmh3}.---If patterns have similar column vectors in a pair-pattern matrix, then they tend to express similar semantic relations.
+\end{hypothesis}
+\begin{hypothesis}{Latent Relation Hypothesis}{}
+\par Word-pairs co-occurring in similar patterns tend to have similar semantic relations\cite{turney2003vsmh4}.---If word pairs have similar row vectors in a pair-pattern matrix, then they tend to have similar semantic relations.
+\end{hypothesis}
+\par These two hypothesis are complementary concepts. The pattern ``\textsl{A eats B}" and ``\textsl{B is eaten by A}" tend to co-occur with similar word-pairs (\textsl{A}, \textsl{B}), where the extended distributional hypothesis indicates that they  may express similar semantic relations. The word-pairs (\textsl{cat}, \textsl{fish}) and (\textsl{panda}, \textsl{bamboo}) tend to co-occur with similar patter ``\textsl{A eats B}", where the latent relation hypothesis indicates that they may have similar semantic relations.
+\input{chapters/ch2/figure/freqmat23.tex}
+
+\section{Machine Learning for Text Classification}\label{sec:ml}
+\par Documents are represented as vectors in a vector space model, hence any machine learning approach which works with vectors can work with vectors from a vector space model\cite{witten2016ml}. These approaches put efforts into the construction of an automatic builder of classifiers rather than a classifier\cite{sebastiani2002tc}.
+
+\subsection{k-Nearest Neighbor Classifiers}
+\par Nearest neighbor classifiers use distance such as Euclidean distance, dot product and cosine, as similarity measures to perform the classification based on the idea that instances in the same class are likely to be closer to one another than to instances in different classes.
+\par For an unlabeled document, we can search the $k$-nearest neighbors among the training documents and report the majority class from these $k$ neighbors as the predicted class. The choice of $k$ typically ranges between 20 and 40 in the previous works\cite{yang1994knn,yang1999mlall,han2001knn}. Another way is searching among representative meta-documents. We summarize a meta-document for each class, then apply the same approach as mentioned above. The preprocessing phase of summarization improves the efficiency of the classifier since it significantly reduces the number of distance computations\cite{rocchio1971knn,han2000knn}.
+
+\subsection{Naive Bayes Classifiers}
+\par Generative classifiers use an implicit mixture model for generation of the underlying instances. Each component of a mixture model is essentially a generative model for a class, which provides the probability of a particular feature for that class.
+\par Naive Bayes classifiers are perhaps the most common generative classifiers, they model the distribution of an instance in each class by a probabilistic distribution with independence assumptions between the distributions of features. For an unlabeled document, the component generative models are used in conjunction with the Bayes rule to compute its posterior probability of each class, and the class with the highest posterior probability is reported as the predicted class\cite{yang1999mlall,joachims1997nb,koller1997nb,lewis1998nb,mccallum1998nb,ng2002nblr}.
+
+\subsection{Logistic Regression Classifiers}
+\par Regressions are methods to discover the relationship between a dependent variable and one or more independent variables. Although these methods are designed for real values, we can treat the binary value of a class as a special case of a real value and use them in classification\cite{aggarwal2012tc}.
+\par An early application is linear least squares fit (LLSF) methods. They model the binary values of classes as a linear function of features, and try to minimize the squared errors between the modeled binary values of classes and the real ones\cite{yang1994knn,yang1999mlall}. A more common application is logistic regression classifiers. Instead of modeling the binary values of classes, they model the distribution of the binary values of classes as a logistic function of a linear function, and try to maximize the probability of the real binary values\cite{ng2002nblr,zhang2003lrsvm}.
+
+\subsection{Support Vector Machine Classifiers}
+\par Support vector machines perform the classification by finding a hyperplane which best separates the different classes with the maximal margin\cite{cortes1995svm}. Besides a linear separation, tehy can construct a non-linear separation in the original space by mapping instances non-linearly to an inner product space where classes can be separated linearly. However, linear support vector machines are used most often in practice because of their simplicity\cite{aggarwal2012tc}.
+\par Since the hyperplane can be determined by examining the appropriate subset of instances as support vectors around the boundaries of classes, it is effective in high dimensional spaces and suited to text classification\cite{yang1999mlall,zhang2003lrsvm,joachims1998svm,joachims1999svm,joachims2001svm}.
+
+\subsection{Neural Network Classifiers}
+\par Neural network is a collection of connected units called neurons. Each neuron receives inputs from predecessor neurons and produces outputs to successor neurons, one of each connection is associated with a weight used to compute a linear combination of inputs. An activation function or a threshold can be applied to neurons to induce non-linearity.
+\par The use of multiple layers of neurons can approximate a non-linear boundary by multiple pieces of linear boundaries. The training process of such networks is more complex since the errors need to be back-propagated over different layers\cite{yang1999mlall,lam1999nn,ruiz1999nn,weigend1999nn}. However, in the case of text classification, some research observed that non-linear models do not yield significant improvement compared to linear models\cite{schutze1995nn,wiener1995nn}.

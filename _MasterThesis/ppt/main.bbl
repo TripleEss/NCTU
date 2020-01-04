@@ -1,0 +1,99 @@
+\begin{thebibliography}{10}
+
+\bibitem{Feldman2006tm}
+R.~Feldman and J.~Sanger, {\em Text Mining Handbook: Advanced Approaches in
+  Analyzing Unstructured Data}.
+\newblock New York, NY, USA: Cambridge University Press, 2006.
+
+\bibitem{Manning2008tm}
+C.~D. Manning, P.~Raghavan, and H.~Sch\"{u}tze, {\em Introduction to
+  Information Retrieval}.
+\newblock New York, NY, USA: Cambridge University Press, 2008.
+
+\bibitem{Sebastiani2002mltm}
+F.~Sebastiani, ``Machine learning in automated text categorization,'' {\em ACM
+  Comput. Surv.}, vol.~34, pp.~1--47, Mar. 2002.
+
+\bibitem{Turney2010vsm}
+P.~D. Turney and P.~Pantel, ``From frequency to meaning: Vector space models of
+  semantics,'' {\em J. Artif. Int. Res.}, vol.~37, pp.~141--188, Jan. 2010.
+
+\bibitem{Salton1975vsmh1}
+G.~Salton, A.~Wong, and C.~S. Yang, ``A vector space model for automatic
+  indexing,'' {\em Commun. ACM}, vol.~18, pp.~613--620, Nov. 1975.
+
+\bibitem{Harris1954vsmh2}
+Z.~S. Harris, ``Distributional structure,'' {\em Word}, vol.~10, no.~2-3,
+  pp.~146--162, 1954.
+
+\bibitem{Firth1957vsmh2}
+J.~Firth, {\em A Synopsis of Linguistic Theory, 1930-1955}.
+\newblock 1957.
+
+\bibitem{Lin2001vsmh3}
+D.~Lin and P.~Pantel, ``Dirt @sbt@discovery of inference rules from text,'' in
+  {\em Proceedings of the Seventh ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining}, KDD '01, (New York, NY, USA),
+  pp.~323--328, ACM, 2001.
+
+\bibitem{Turney2003vsmh4}
+P.~D. Turney and M.~L. Littman, ``Measuring praise and criticism: Inference of
+  semantic orientation from association,'' {\em ACM Trans. Inf. Syst.},
+  vol.~21, pp.~315--346, Oct. 2003.
+
+\bibitem{Lowe2001}
+W.~Lowe, ``Towards a theory of semantic space,'' in {\em Proceedings of the
+  Cognitive Science Society}, vol.~23, 2001.
+
+\bibitem{Ku2007score}
+L.-w. Ku, Y.-s. Lo, and H.-h. Chen, ``Using polarity scores of words for
+  sentence-level opinion extraction,'' in {\em Proceedings of NTCIR-6 workshop
+  meeting}, pp.~316--322, 2007.
+
+\bibitem{Ku2007ntusd}
+L.-W. Ku and H.-H. Chen, ``Mining opinions from the web: Beyond relevance
+  retrieval,'' {\em Journal of the American Society for Information Science and
+  Technology}, vol.~58, no.~12, pp.~1838--1850, 2007.
+
+\bibitem{Ku2009morph}
+L.-W. Ku, T.-H. Huang, and H.-H. Chen, ``Using morphological and syntactic
+  structures for chinese opinion analysis,'' in {\em Proceedings of the 2009
+  Conference on Empirical Methods in Natural Language Processing: Volume
+  3-Volume 3}, pp.~1260--1269, Association for Computational Linguistics, 2009.
+
+\bibitem{Wang2006antusd}
+S.-M. Wang and L.-W. Ku, ``Antusd: A large chinese sentiment dictionary,'' in
+  {\em the Tenth International Conference on Language Resources and Evaluation
+  (LREC 2016)}, pp.~2697--2702, 2016.
+
+\bibitem{Aly2005multi}
+M.~Aly, ``Survey on multiclass classification methods,'' {\em Neural Netw},
+  vol.~19, 2005.
+
+\bibitem{Mikolov2013ord2vec}
+T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean, ``Efficient estimation of word
+  representations in vector space,'' {\em arXiv preprint arXiv:1301.3781},
+  2013.
+
+\bibitem{le2014doc2vec}
+Q.~Le and T.~Mikolov, ``Distributed representations of sentences and
+  documents,'' in {\em Proceedings of the 31st International Conference on
+  Machine Learning (ICML-14)}, pp.~1188--1196, 2014.
+
+\bibitem{Pennington2014glove}
+J.~Pennington, R.~Socher, and C.~D. Manning, ``Glove: Global vectors for word
+  representation,'' in {\em Empirical Methods in Natural Language Processing
+  (EMNLP)}, pp.~1532--1543, 2014.
+
+\bibitem{Yelp9}
+``Yelp dataset challenge.'' \url{https://www.yelp.com/dataset_challenge}, 2017.
+
+\bibitem{MioChnCorp}
+Y.~Lin, H.~Lei, J.~Wu, and X.~Li, ``An empirical study on sentiment
+  classification of chinese review using word embedding,'' {\em arXiv preprint
+  arXiv:1511.01665}, 2015.
+
+\bibitem{20news}
+``20 newsgroups.'' \url{http://qwone.com/~jason/20Newsgroups}, 2017.
+
+\end{thebibliography}

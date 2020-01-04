@@ -1,0 +1,247 @@
+\chapter{Experiments and Results}
+\par To verify the functionality of CopeOpi vectors, we make comparisons with several commonly-used features for text classificaiton, and examine these features on different types of machine learning algorithms to solve text classification problems, including sentiment analysis and topic categorization, in both English and Chinese.
+\section{Flowchart and Settings}
+\par Figure~\ref{fig:flowchart} shows the flowchart of our experiments, detailed settings are described in the following sections.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.42]{chapters/ch4/figure/flowchart.png}
+	\caption{The flowchart of experiments}
+	\label{fig:flowchart}
+\end{figure}
+\par Table~\ref{tab:flow_opensrc} lists the open sources used in our experiments. They provide high quality implementation and ensure the reliability of experiment results.
+\input{chapters/ch4/table/flow/flow_opensrc.tex}
+
+\subsection{Sampling}
+\par In most operational machine learning settings, once a classifier has been constructed, it is desirable to evaluate its performance. In this case, prior to classifier construction, the initial dataset is split into two parts\cite{sebastiani2002tc,ripley2007ml}:
+\begin{itemize}
+\item training set: a set of labeled instances used to construct a classifier, to fit the parameters of a machine learning algorithm.
+	\begin{itemize}
+	\item validation set: a set of labeled instances used to tune the hyperparameters of a machine learning algorithm.
+	\end{itemize}
+\item testing set: a set of labeled instances used to evaluate a classifier, to assess the performance of a fully-specified classifier.
+\end{itemize}
+~\newline
+\partopic{Experiment Settings} are described in the sections of experiments.
+
+\subsection{Preprocessing}
+\par It is useful to apply some linguistic processing to raw texts before performing an analysis on them. Things to consider include:
+\begin{itemize}
+\item text cleaning: stripping unwanted tags, punctuation, numeric, etc.
+\item tokenization: deciding what constitutes a unit and how to extract units.
+\item normalization: converting superficially-different units to the same form.
+\item stopword removal: removing frequent words which do not carry much meaning.
+\end{itemize}
+~\newline
+\partopic{Experiment Settings} are described in Table~\ref{tab:flow_preproc}.
+\par We unify the preprocessing for each language:
+\begin{itemize}
+\item for English corpora, we use \texttt{gensim.parsing.preprocessing.preprocess\_string} for text cleaning, tokenization, normalization and stopword removal.
+\item for Chinese corpora, we use \texttt{jieba.cut} for tokenization; and strip characters outside the CJK Unified Ideographs\footnote{The Chinese, Japanese and Korean scripts share a common background, known as CJK characters.} UTF-8 block.
+\end{itemize}
+\input{chapters/ch4/table/flow/flow_preproc.tex}
+
+\subsection{Feature Transformation, Selection and Extraction}
+Machine learning algorithms require a numerical representation of objects, so we have to transform documents as feature vectors before text classification. Due to the high-dimensional sparse property and the existence of irrelevant features, dimension reduction is especially important for texts\cite{aggarwal2012tc}:
+\begin{itemize}
+\item feature selection: picking a subset of features from the original feature set.
+\item feature extraction: creating a new set of features from the original feature set.
+\end{itemize}
+~\newline
+\partopic{Experiment Settings} are described in Table~\ref{tab:flow_features}.
+\par We make comparisons with several commonly-used features for text classificaiton, including:
+\begin{itemize}
+\item term-document matrix models:
+	\begin{itemize}
+	\item bag-of-word (BOW)
+	\item LSI\cite{deerwester1990lsi}-truncated BOW (BOW(LSI))
+	\item term frequency-inverse document frequency (TF-IDF)
+	\item LSI-truncated TF-IDF (TF-IDF(LSI))
+	\end{itemize}
+\item word-context matrix models:
+	\begin{itemize}
+	\item Word2vec\cite{mikolov2013word2vec}
+	\item GloVe\cite{pennington2014glove}
+	\end{itemize}
+\end{itemize}
+\input{chapters/ch4/table/flow/flow_features.tex}
+
+\subsection{Training}
+Since documents may be represented as feature vectors, it is possible to use most machine learning algorithms for text classification, as we discussed in section~\ref{sec:ml}.
+~\newline
+~\newline
+\partopic{Experiment Settings} are described in Table~\ref{tab:flow_mlalgos}.
+\par We examine the mentioned features on different types of machine learning algorithms, including:
+\begin{itemize}
+\item k-Nearest neighbor classifiers (kNN)
+\item naive Bayes classifiers (NB)
+\item logistic regression classifiers (LR)
+\item support vector machine classifiers (SVM)
+\item neural network classifiers (NN)
+\end{itemize}
+\input{chapters/ch4/table/flow/flow_mlalgos.tex}
+
+\subsection{Testing and Evaluation}
+Table~\ref{tab:flow_prf1} is the contingency table of binary classification. Performance of a binary classifier is usually measured in terms of precision, recall and \fscore{}\cite{sebastiani2002tc}, which are defined as follows:
+\begin{itemize}
+\item precision: the fraction of predicted-true that are real-true.
+\item recall: the fraction of the real-true that are predicted-true.
+\item \fscore{}: the harmonic mean of precision and recall.
+\begin{equation*}
+\begin{gathered}
+	\precision_c = \dfrac{{TP}_c}{{TP}_c+{FP}_c}
+\\[\eqlineskip]
+	\recall_c = \dfrac{{TP}_c}{{TP}_c+{FN}_c}
+\\[\eqlineskip]
+	{F_1}_c = \dfrac{2 \times \precision_c \times \recall_c}{\precision_c + \recall_c}
+\end{gathered}
+\end{equation*}
+\end{itemize}
+\vspace{-\intextsep}
+\input{chapters/ch4/table/flow/flow_prf1.tex}
+~\newline
+\partopic{Experiment Settings}
+\par As for multiclass classification, we use \fscore{} as measure for each class, and take average of them as a macro \fscore{}.
+\begin{equation*}
+	\mathrm{macro}\text{-}F_1 = \dfrac{1}{|\mathbb{C}|} \sum_{c \in \mathbb{C}} {F_1}_c
+\end{equation*}
+
+
+\section{Experiments: Sentiment Analysis}
+We use SA($lang$)($n$) as the abbreviation standing for sentiment analysis experiment $n$ of language $lang$, where EN represents English and ZH represents Chinese.
+\subsection{Datasets}
+We use Yelp Dataset\footnote{The version we use is Yelp Dataset Challenge round 9.}\cite{Yelp} as the English corpus and MioChnCorp\cite{MioChnCorp} as the Chinese corpus.
+Both are user-assigned five-star integral rating sentiment annotated, ranged from 5 as positive to 1 as negative. 
+Table~\ref{tab:sa_data} is the descriptions about these datasets.
+~\newline
+~\newline
+\partopic{Experiment Datasets} are summarized in Table~\ref{tab:sa_dataexp}.
+\par We randomly select 15000 instances from the original dataset for each experiment, and split into a training set and a testing set in ratio 0.5:0.5.
+\begin{itemize}
+\item SA(EN|ZH)(A): 2 classes are positive and negative.
+\item SA(EN|ZH)(B): 3 classes are positive, negative and neutral.
+\item SA(EN|ZH)(C): 5 classes are 1-star, 2-star, 3-star, 4-star and 5-star.
+\end{itemize}
+\input{chapters/ch4/table/sa/sa_data.tex}
+\vspace{-\intextsep}
+\input{chapters/ch4/table/sa/sa_dataexp.tex}
+
+\subsection{Results and Observations}
+\par We use macro \fscore{}s as the measure of effectiveness and training CPU time as the measure of efficiency. Results\footnote{The values of \fscore{}s are the larger the better, while the values of training CPU time are the smaller the better. In the table of results, color green represents a better result while color red represents a worse result; three bold values are the top three results of each classifier.} are shown in Table~\ref{tab:sa_en_a} to Table~\ref{tab:sa_zh_c}.
+\par Here we brief our observations about the results of sentiment analysis experiments:
+\begin{enumerate}
+\item In SA(EN)(A) and SA(ZH)(A),
+which are binary text classification problems, the CopeOpi here are augmented CopeOpi scores.
+Compare the best macro \fscore{} of CopeOpi and the best macro \fscore{} of each experiment, we lose by
+4.57\% in SA(EN)(A) and 2.08\% in SA(ZH)(A).
+This shows that the computation scheme of augmented CopeOpi scores is feasible in both English and Chinese binary text classification.
+\item In SA(ZH)(A),
+which is a binary Chinese sentiment analysis problem, we compare with the CopeOpi scores recorded in ANTUSD\cite{wang2006antusd}, which are original CopeOpi scores.
+The augmented CopeOpi scores outperform the CopeOpi scores recorded in ANTUSD by more than 10\% for each classifier.
+This shows that augmented CopeOpi scores function normally without manually filtering irrelevant words and are more applicable to the dataset.
+\item In SA(EN)(B), SA(EN)(C), SA(ZH)(B) and SA(ZH)(C),
+which are multiclass text classification problems, the CopeOpi here are CopeOpi vectors constructed by one-versus-rest, one-versus-one and both strategies.
+Compare the best macro \fscore{} of CopeOpi and the best macro \fscore{} of each experiment, we lose by
+2.10\% in SA(EN)(B), 2.58\% in SA(EN)(C), 0.42\% in SA(ZH)(B) and 1.30\% in SA(ZH)(C).
+This shows that the computation scheme of CopeOpi vectors is feasible in both English and Chinese multiclass text classification.
+\item
+$\frac{4}{10}$ of the macro \fscore{}s of CopeOpi scores in SA(EN|ZH)(A) are better than the average macro \fscore{} of each classifier of each experiment,
+$\frac{18}{20}$ of the best macro \fscore{}s of CopeOpi vectors in SA(EN|ZH)(B|C) are better than the average macro \fscore{} of each classifier of each experiment.
+This shows that CopeOpi vectors in muticlass classification are more effective than augmented CopeOpi scores in binary classification.
+\end{enumerate}
+
+\input{chapters/ch4/table/sa/sa_en_a.tex}
+\vspace{-1.75\intextsep}
+\input{chapters/ch4/table/sa/sa_en_b.tex}
+\input{chapters/ch4/table/sa/sa_en_c.tex}
+\vspace{-1.75\intextsep}
+\input{chapters/ch4/table/sa/sa_zh_a.tex}
+\input{chapters/ch4/table/sa/sa_zh_b.tex}
+\vspace{-1.75\intextsep}
+\input{chapters/ch4/table/sa/sa_zh_c.tex}
+
+
+\section{Experiments: Topic Categorization}
+We use TC($lang$)($n$) as the abbreviation standing for topic categorization experiment $n$ of language $lang$, where EN represents English and ZH represents Chinese.
+\subsection{Datasets}
+We use 20 Newsgroups\cite{20news} as the English corpus and Fudan University TC Corpus\cite{fudan} as the Chinese corpus.
+Both contains 20 categories and training-and-testing splits.
+Table~\ref{tab:tc_data} is the descriptions about these datasets.
+~\newline
+~\newline
+\partopic{Experiment Datasets} are summarized in Table~\ref{tab:tc_dataexp}.
+\par We subset categories from the original dataset for each experiment, and use their default training-and-testing splits.
+\begin{itemize}
+\item TC(EN):
+	\begin{itemize}
+	\item TC(EN)(A): 20 classes are all categories of the original dataset.
+	\item TC(EN)(B): 7 classes are the first hierarchy categories.
+	\item TC(EN)(C): 5 classes are categories within the first hierarchy comp.
+	\item TC(EN)(D): 4 classes are categories within the first hierarchy talk.
+	\end{itemize}
+\item TC(ZH):
+	\begin{itemize}
+	\item TC(ZH)(A): 20 classes are all categories of the original dataset.
+	\item TC(ZH)(B): 9 classes are categories with more than a hundred instances.
+	\item TC(ZH)(C): 11 classes are categories with less than a hundred instances.
+	\end{itemize}
+\end{itemize}
+\input{chapters/ch4/table/tc/tc_data.tex}
+\input{chapters/ch4/table/tc/tc_dataexp.tex}
+
+\subsection{Results and Observations}
+\par We use macro \fscore{}s as the measure of effectiveness and training CPU time as the measure of efficiency. Results\footnote{The values of \fscore{}s are the larger the better, while the values of training CPU time are the smaller the better. In the table of results, color green represents a better result while color red represents a worse result; three bold values are the top three results of each classifier.} are shown in Table~\ref{tab:tc_en_a} to Table~\ref{tab:tc_zh_c}.
+\par Here we brief our observations about the results of topic categorization experiments:
+\begin{enumerate}
+\item
+	\begin{enumerate}[label=(\roman*)]
+	\item In TC(EN)(A) and TC(ZH)(A),
+	both corpora contain 20 categories.
+	Compare the best macro \fscore{} of CopeOpi and the best macro \fscore{} of each experiment, we lose by
+	0.87\% in TC(EN)(A) but 14.01\% in TC(ZH)(A).
+	CopeOpi vectors function badly in one of them.
+	Except languages, the biggest difference between their corpus is the balance.
+	But we doubt if CopeOpi vectors can not function well in imbalanced corpora since the influence of imbalance should be smoothed by the normalization of their formulas.
+	\item In TC(EN)(B) and TC(ZH)(A),
+	both corpora are imbalanced.
+	Compare the best macro \fscore{} of CopeOpi and the best macro \fscore{} of each experiment, we lose by
+	1.03\% in TC(EN)(B) but 14.01\% in TC(ZH)(A).
+	CopeOpi vectors function well in one of them.
+	Except languages, the biggest difference between their corpus is the size of the training set.
+	We deduce that the reason why CopeOpi vectors function badly in TC(ZH)(A) is due to the lack of training instances, not imbalance.
+	\end{enumerate}
+\item In TC(ZH)(B) and TC(ZH)(C),
+the former corpus contains categories with more than a hundred instances, the later corpus contains categories with less than a hundred instances.
+Compare the best macro \fscore{} of CopeOpi and the best macro \fscore{} of each experiment, we lose by
+3.02\% in TC(ZH)(B) but 8.95\% in TC(ZH)(C).
+This confirms the deduction that CopeOpi vectors can not function well if there are no sufficient training instances. 
+\item In TC(EN)(C) and TC(EN)(D),
+both corpora contain categories with similar topics.
+Compare the best macro \fscore{} of CopeOpi and the best macro \fscore{} of each experiment, we lose by
+2.33\% in TC(EN)(C) and 0.51\% in TC(EN)(D).
+This shows that CopeOpi vectors can function well even though categories are similar.
+\end{enumerate}
+\input{chapters/ch4/table/tc/tc_en_a.tex}
+\input{chapters/ch4/table/tc/tc_en_b.tex}
+\vspace{-1.75\intextsep}
+\input{chapters/ch4/table/tc/tc_en_c.tex}
+\input{chapters/ch4/table/tc/tc_en_d.tex}
+\vspace{-1.75\intextsep}
+\input{chapters/ch4/table/tc/tc_zh_a.tex}
+\input{chapters/ch4/table/tc/tc_zh_b.tex}
+\vspace{-1.75\intextsep}
+\input{chapters/ch4/table/tc/tc_zh_c.tex}
+
+
+\section{Summary}
+Here we summarize our observations about CopeOpi vectors:
+\begin{enumerate}
+\item CopeOpi vectors can produce comparable results with a smaller vector size and shorter training time in multiclass text classification.
+\begin{enumerate}[label=(\roman*)]
+\item $\frac{49}{55}$ of the best macro \fscore{}s of CopeOpi vectors in multiclass classification are better than the average macro \fscore{} of each classifier of each experiment.
+\item The vector size of CopeOpi vectors is the smallest in all experiment, as listed in Table~\ref{tab:vec_size}.
+\item The training time of CopeOpi vectors is the shortest in all experiment.
+\end{enumerate}
+\item Compared with the other features, CopeOpi vectors provide stabler results when applied to different types of machine learning algorithms. There are some results deviating, but in those cases the deviations are general phenomenons for most of the features.
+\item Compared with the winner TF-IDF, CopeOpi vectors lose by at most 3.02\% except the experiments without sufficient training instances. Although TF-IDFs perform the best, they also costs most in terms of memory space and training time. Since the vector size of TF-IDFs is proportional to the number of unique words in a corpus, in the cases of large corpus, CopeOpi vectors will have advantages in efficiency.
+\end{enumerate}
+\input{chapters/ch4/table/vec_size.tex}

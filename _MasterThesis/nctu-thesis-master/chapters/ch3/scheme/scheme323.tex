@@ -1,0 +1,59 @@
+\begin{scheme}{CopeOpi Vectors (Subset-versus-Subset)}{}
+Given $n$ corpora of labeled documents $\mathbb{D} = \{ \mathbb{D}_{c_1},\mathbb{D}_{c_2},\dots,\mathbb{D}_{c_n} \}$,
+and the corresponding classes $\mathbb{C} = \{ c_1,c_2,\dots,c_n \}$.
+\begin{itemize}
+\item $\mathbb{D}_{c_i} = \{ \langle d,c \rangle \where \text{$d$ is a document labeled as class $c=c_i$} \}$
+	\begin{itemize}
+	\item the vocabulary $\mathbb{V}_{c_i}$ is a set of unique words in $\mathbb{D}_{c_i}$
+	\end{itemize}
+\end{itemize}
+For each word $w_i \in \cup_{c \in \mathbb{C}} \mathbb{V}_{c}$,
+we can compute its CopeOpi vector $\overrightarrow{\mathcal{COP}}_{w_i}$ by subset-versus-subset strategy.
+\tcbline
+For any subset-pair $\mathbb{J},\mathbb{K} \subseteq \mathbb{C}$ where $\mathbb{J},\mathbb{K} \neq \varnothing$, can construct two opposite sets,
+\begin{itemize}
+\item the positive set $\mathbb{P}^{\mathbb{J},\mathbb{K}}_{w_i} = \mathbb{J}$
+	\begin{itemize}
+	\item the positive corpus ${\mathbb{D}_\mathbb{P}}^{\mathbb{J},\mathbb{K}}_{w_i} = \{ \mathbb{D}_{c} \where c \in \mathbb{J} \}$
+	\item the positive vocabulary ${\mathbb{V}_\mathbb{P}}^{\mathbb{J},\mathbb{K}}_{w_i} = \cup_{c \in \mathbb{J}} \mathbb{V}_{c}$
+	\end{itemize}
+\item the positive set $\mathbb{N}^{\mathbb{J},\mathbb{K}}_{w_i} = \mathbb{K}$
+	\begin{itemize}
+	\item the positive corpus ${\mathbb{D}_\mathbb{N}}^{\mathbb{J},\mathbb{K}}_{w_i} = \{ \mathbb{D}_{c} \where c \in \mathbb{K} \}$
+	\item the positive vocabulary ${\mathbb{V}_\mathbb{N}}^{\mathbb{J},\mathbb{K}}_{w_i} = \cup_{c \in \mathbb{K}} \mathbb{V}_{c}$
+	\end{itemize}
+\end{itemize}
+and compute the augmented CopeOpi score $\mathcal{COP}^{\mathbb{J},\mathbb{K}}_{w_i}$
+of word $w_i$ with respect to subset-pair $\mathbb{J},\mathbb{K}$ based on these two opposite sets.
+\begin{equation*}
+\begin{gathered}
+	\mathcal{P}^{\mathbb{J},\mathbb{K}}_{w_i} = \dfrac{
+		fp^{\mathbb{J},\mathbb{K}}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{P}}^{\mathbb{J},\mathbb{K}}_{w_i}} fp^{\mathbb{J},\mathbb{K}}_w
+	}{
+		fp^{\mathbb{J},\mathbb{K}}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{P}}^{\mathbb{J},\mathbb{K}}_{w_i}} fp^{\mathbb{J},\mathbb{K}}_w +
+		fn^{\mathbb{J},\mathbb{K}}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{N}}^{\mathbb{J},\mathbb{K}}_{w_i}} fn^{\mathbb{J},\mathbb{K}}_w
+	}
+\\[\eqlineskip]
+	\mathcal{N}^{\mathbb{J},\mathbb{K}}_{w_i} = \dfrac{
+		fn^{\mathbb{J},\mathbb{K}}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{N}}^{\mathbb{J},\mathbb{K}}_{w_i}} fn^{\mathbb{J},\mathbb{K}}_w
+	}{
+		fp^{\mathbb{J},\mathbb{K}}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{P}}^{\mathbb{J},\mathbb{K}}_{w_i}} fp^{\mathbb{J},\mathbb{K}}_w +
+		fn^{\mathbb{J},\mathbb{K}}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{N}}^{\mathbb{J},\mathbb{K}}_{w_i}} fn^{\mathbb{J},\mathbb{K}}_w
+	}
+\\[\eqlineskip]
+	\mathcal{COP}^{\mathbb{J},\mathbb{K}}_{w_i} = \mathcal{P}^{\mathbb{J},\mathbb{K}}_{w_i} - \mathcal{N}^{\mathbb{J},\mathbb{K}}_{w_i}
+\end{gathered}
+\end{equation*}
+where $\mathcal{P}^{\mathbb{J},\mathbb{K}}_{w_i}$ and $\mathcal{N}^{\mathbb{J},\mathbb{K}}_{w_i}$ are the normalized probabilities of
+word $w_i$ being in class $\mathbb{P}^{\mathbb{J},\mathbb{K}}_{w_i}$ and being in class $\mathbb{N}^{\mathbb{J},\mathbb{K}}_{w_i}$;
+$fp^{\mathbb{J},\mathbb{K}}_{w_i}$ and $fn^{\mathbb{J},\mathbb{K}}_{w_i}$ are the frequencies of 
+word $w_i$ in corpus ${\mathbb{D}_\mathbb{P}}^{\mathbb{J},\mathbb{K}}_{w_i}$ and in corpus ${\mathbb{D}_\mathbb{N}}^{\mathbb{J},\mathbb{K}}_{w_i}$;
+the CopeOpi score $\mathcal{COP}^{\mathbb{J},\mathbb{K}}_{w_i}$ of
+word $w_i$ with respect to subset-pair $\mathbb{J},\mathbb{K}$ is defined as the difference of the two opposite normalized probabilities, ranged from
+$+1$(being in class $\mathbb{P}^{\mathbb{J},\mathbb{K}}_{w_i}$) to $-1$(being in class $\mathbb{N}^{\mathbb{J},\mathbb{K}}_{w_i}$).
+\tcbline
+The CopeOpi vector $\overrightarrow{\mathcal{COP}}_{w_i}$ of word $w_i$ is composed of these at most $(2^n-1)^2$ augmented CopeOpi scores.
+\begin{equation*}
+\overrightarrow{\mathcal{COP}}_{w_i} = (\mathcal{COP}^{\mathbb{J}_1,\mathbb{K}_1}_{w_i},\mathcal{COP}^{\mathbb{J}_2,\mathbb{K}_2}_{w_i},\dots)
+\end{equation*}
+\end{scheme}

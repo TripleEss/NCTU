@@ -1,0 +1,44 @@
+\begin{figure}[t]
+\small
+\centering
+\begin{tikzpicture}
+	\draw[step=1cm, opacity=0] (-5.5,0) grid (10.5,0);
+	\fill[black!5!white] (0,0) rectangle (5,2);
+	\draw[step=1cm, double] (0,1) grid (4,2);
+	\draw[step=1cm, double] (0,0) -- (0,1);
+	\draw[step=1cm, double] (1,0) -- (1,1);
+	\draw[step=1cm, double] (2,0) -- (2,1);
+	\draw[step=1cm, double] (3,0) -- (3,1);
+	\draw[step=1cm, double] (4,0) -- (4,1);
+	\draw[step=1cm, double] (4,1) -- (5,1);
+	\draw[step=1cm, double] (4,2) -- (5,2);
+	\draw[step=1cm, dashed] (0,0) -- (5,0);
+	\draw[step=1cm, dashed] (5,0) -- (5,2);
+	\node (p1) at (-0.5,1.5) {$\rightarrow$};
+	\node[left=-0.15cm of p1] {word $w_i$};
+	\node at (2.5,3.6) {context};
+	\node at (0.5,2.5) {$\downarrow$};
+	\node at (1.5,2.5) {$\downarrow$};
+	\node at (3.5,2.5) {$\downarrow$};
+	\node at (0.5,3) {$c_1$};
+	\node at (1.5,3) {$c_2$};
+	\node at (2.5,3) {$\cdots$};
+	\node at (3.5,3) {$c_j$};
+	\node at (4.5,3) {$\cdots$};
+	\node at (0.5,1.5) {${fc_1}_{w_i}$};
+	\node at (1.5,1.5) {${fc_2}_{w_i}$};
+	\node at (2.5,1.5) {$\cdots$};
+	\node at (3.5,1.5) {${fc_j}_{w_i}$};
+	\node at (4.5,1.5) {$\cdots$};
+	\node at (0.5,0.6) {$\vdots$};
+	\node at (1.5,0.6) {$\vdots$};
+	\node at (2.5,0.6) {$\vdots$};
+	\node at (3.5,0.6) {$\vdots$};
+	\node at (4.5,0.6) {$\vdots$};
+\end{tikzpicture}
+\caption[The word-context matrix]{The word-context matrix.\\
+In a word-context matrix,
+each row represents a unique word $w_i$ and
+each column represents a context $c_j$.
+The element ${fc_j}_{w_i}$ is the frequency of word $w_i$ in context $c_j$.}
+\end{figure}

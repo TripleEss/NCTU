@@ -1,0 +1,77 @@
+\subsection{The Text Classification Problems}
+\subsubsection{Background}
+\begin{frame}{Background}
+\begin{itemize}
+\item Millions of digital texts are generated everyday. To derive useful information from these digital texts, text
+mining has become a popular area of both research and business
+	\begin{itemize}
+	\item Text classification is one of the most important task
+	\end{itemize}
+\item \alert{Text classification}, or text categorization
+	\begin{itemize}
+	\item Assigning a document to a set of predefined classes, categories or labels
+	\end{itemize}
+\item In the past, text classification problems were solved by
+	\begin{itemize}
+	\item Manually assignment
+	\item Knowledge engineering approaches (hand-crafted classification rules)
+	\item Both are expensive to scale due to the needs of skilled labors and expert knowledge
+	\end{itemize}
+\item Nowadays, works on classification focus on \alert{machine learning approaches}
+\end{itemize}
+\end{frame}
+
+\subsubsection{Definition}
+\begin{frame}{Definition of Text Classification}
+\begin{block}{Definition (Text Classification)}
+In a text classification problem, we are given
+	\begin{itemize}
+	\item A document space $\mathbb{X}$
+	\item A set of predefined classes $\mathbb{C}$
+	\end{itemize}
+The task of text classification can be defined as an unknown assignment function
+	\begin{equation*}
+	f: \mathbb{X} \times \mathbb{C} \rightarrow \{\mathtt{True},\mathtt{False}\}
+	\end{equation*}
+which assigns each pair $\langle d,c \rangle \in \mathbb{X} \times \mathbb{C}$ a Boolean value $\mathtt{True}$ if the document $d$ is in the class $c$ or $\mathtt{False}$ otherwise\cite{Feldman2006tm,Manning2008tm}
+\end{block}
+\end{frame}
+
+\begin{frame}{Definition of Supervised Learning for Text Classification}
+\begin{block}{Definition (Supervised Learning for Text Classification)}
+By using
+	\begin{itemize}
+	\item A machine learning algorithm $\Gamma$
+	\item A labeled training set $\mathbb{D}=\{\langle d,c \rangle \where \langle d,c \rangle \in \mathbb{X} \times \mathbb{C}\}$
+	\end{itemize}
+We wish to learn a \alert{classifier}, or classification function $\gamma$ which approximates the unknown assignment function $f$ as close as possible\cite{Sebastiani2002mltm,Feldman2006tm,Manning2008tm}
+	\begin{equation*}
+	\begin{gathered}
+	\Gamma(\mathbb{D}) = \gamma \\
+	\gamma: \mathbb{X} \times \mathbb{C} \rightarrow \{\mathtt{True},\mathtt{False}\} \approx f
+	\end{gathered}
+	\end{equation*}
+\end{block}
+\end{frame}
+
+\subsubsection{Applications}
+\begin{frame}{Applications}
+Typically, the document space $\mathbb{X}$ can be any kinds of texts and the classes $\mathbb{C}$ are defined for the user needs, thus text classification has a wide variety of applications in text mining
+\begin{itemize}
+\item Document organization and information retrieval
+	\begin{itemize}
+	\item $\mathbb{X}$ = articles
+	\item $\mathbb{C}$ = topics
+	\end{itemize}
+\item Sentiment analysis and opinion mining
+	\begin{itemize}
+	\item $\mathbb{X}$ = customer reviews
+	\item $\mathbb{C}$ = positive, negative
+	\end{itemize}
+\item Email routing and spam filtering
+	\begin{itemize}
+	\item $\mathbb{X}$ = emails
+	\item $\mathbb{C}$ = spam, not-spam
+	\end{itemize}
+\end{itemize}
+\end{frame}

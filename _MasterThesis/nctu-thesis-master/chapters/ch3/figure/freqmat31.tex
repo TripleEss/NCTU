@@ -1,0 +1,30 @@
+\begin{figure}[t]
+\small
+\centering
+\begin{tikzpicture}
+	\draw[step=1cm, opacity=0] (-7,0) grid (9,0);
+	\fill[black!5!white] (0,0) rectangle (2,2);
+	\draw[step=1cm, double] (0,1) grid (2,2);
+	\draw[step=1cm, double] (0,0) -- (0,1);
+	\draw[step=1cm, double] (1,0) -- (1,1);
+	\draw[step=1cm, double] (2,0) -- (2,1);
+	\draw[step=1cm, dashed] (0,0) -- (2,0);
+	\node (p1) at (-0.5,1.5) {$\rightarrow$};
+	\node[left=-0.15cm of p1] {Chinese character $c_i$};
+	\node at (1.0,3.6) {corpus of labeled Chinese opinion words};
+	\node at (0.5,2.5) {$\downarrow$};
+	\node at (1.5,2.5) {$\downarrow$};
+	\node at (0.5,3) {$\mathbb{W}_p$};
+	\node at (1.5,3) {$\mathbb{W}_n$};
+	\node at (0.5,1.5) {$fp_{c_i}$};
+	\node at (1.5,1.5) {$fn_{c_i}$};
+	\node at (0.5,0.6) {$\vdots$};
+	\node at (1.5,0.6) {$\vdots$};
+\end{tikzpicture}
+\caption[The frequency matrix of CopeOpi scores]{The frequency matrix of CopeOpi scores.\\
+In the frequency matrix of CopeOpi scores,
+each row represents a unique Chinese character $c_i$ and
+the two columns represent two corpora of labeled Chinese opinion words $\mathbb{W}_p$ and $\mathbb{W}_n$.
+The elements $fp_{c_i}$ and $fn_{c_i}$ are the frequencies of Chinese character $c_i$
+in corpus $\mathbb{W}_p$ and in corpus $\mathbb{W}_n$.}
+\end{figure}

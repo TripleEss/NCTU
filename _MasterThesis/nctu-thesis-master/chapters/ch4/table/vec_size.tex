@@ -1,0 +1,22 @@
+\begin{table}[h]
+\footnotesize
+\centering
+\caption{The vector sizes in experiments}
+\label{tab:vec_size}
+\scalebox{0.8}{
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multirow{3}{*}{} & \multicolumn{6}{c|}{SA}                                             & \multicolumn{7}{c|}{TC}                                \\ \cline{2-14} 
+                  & \multicolumn{3}{c|}{(EN)}        & \multicolumn{3}{c|}{(ZH)}        & \multicolumn{4}{c|}{(EN)}  & \multicolumn{3}{c|}{(ZH)} \\ \cline{2-14} 
+                  & (A)                & (B)  & (C)  & (A)                & (B)  & (C)  & (A)  & (B)  & (C)  & (D)   & (A)     & (B)    & (C)    \\ \hline
+CopeOpi(OVR)      & \multirow{3}{*}{1} & 3    & 5    & \multirow{3}{*}{1} & 3    & 5    & 20   & 7    & 5    & 4     & 20      & 9      & 11     \\ \cline{1-1} \cline{3-4} \cline{6-14} 
+CopeOpi(OVO)      &                    & 3    & 10   &                    & 3    & 10   & 190  & 21   & 10   & 6     & 190     & 36     & 55     \\ \cline{1-1} \cline{3-4} \cline{6-14} 
+CopeOpi(OVR+OVO)  &                    & 6    & 15   &                    & 6    & 15   & 210  & 28   & 15   & 10    & 210     & 45     & 66     \\ \hline
+BOW               & 3746               & 3846 & 3942 & 3108               & 3145 & 3148 & 8647 & 8647 & 8284 & 11851 & 46409   & 45992  & 23920  \\ \hline
+BOW(LSA)          & \multicolumn{13}{c|}{200}                                                                                                    \\ \hline
+TF-TDF            & 3746               & 3846 & 3942 & 3108               & 3145 & 3148 & 8647 & 8647 & 8284 & 11851 & 46409   & 45992  & 23920  \\ \hline
+TF-TDF(LSA)       & \multicolumn{13}{c|}{200}                                                                                                    \\ \hline
+Word2vec          & \multicolumn{13}{c|}{200}                                                                                                    \\ \hline
+GloVe             & \multicolumn{13}{c|}{200}                                                                                                    \\ \hline
+\end{tabular}}
+\end{table}

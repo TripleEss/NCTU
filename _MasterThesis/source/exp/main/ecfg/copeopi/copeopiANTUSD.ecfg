@@ -1,0 +1,77 @@
+[
+    {
+        "name": "kNN_copeopi_ANTUSD",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "data\\embedding\\copeopi\\ANTUSD.copeopi"
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_copeopi_ANTUSD",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "data\\embedding\\copeopi\\ANTUSD.copeopi"
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_copeopi_ANTUSD",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "data\\embedding\\copeopi\\ANTUSD.copeopi"
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_copeopi_ANTUSD",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "data\\embedding\\copeopi\\ANTUSD.copeopi"
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_copeopi_ANTUSD",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "data\\embedding\\copeopi\\ANTUSD.copeopi"
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    }
+]

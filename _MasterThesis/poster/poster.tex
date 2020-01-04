@@ -1,0 +1,58 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{geometry}
+\geometry{
+	left=0.1cm,
+	right=0.1cm,
+	top=1cm,
+	bottom=1cm,
+}
+\usepackage{graphicx}
+
+\newcommand{\eqlineskip}{0.3\baselineskip}
+
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{scheme}{\footnotesize}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\DeclareMathOperator{\where}{\mid\,}
+\DeclareMathOperator{\divby}{/}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable,theorems}
+\newtcbtheorem[]{scheme}{Computation Scheme}{
+	skin=enhanced jigsaw,
+	breakable=true,
+	beforeafter skip=\baselineskip,
+	toptitle=1mm,
+	bottomtitle=1mm,
+	fonttitle=\bfseries\footnotesize,
+	left=1mm,
+	right=1mm,
+	colframe=black!75!blue,
+	colback=blue!5!white,
+}{th}
+
+\title{From CopeOpi Scores to CopeOpi Vectors:\\Word Vectors for Multiclass Text Classification}
+\author{
+\IEEEauthorblockN{Pei-Shan Tsai}
+\IEEEauthorblockA{Natural Computing Laboratory\\Institute of Computer Science and Engineering\\National Chiao Tung University}
+}
+\begin{document}
+\twocolumn[
+\begin{@twocolumnfalse}
+\maketitle
+\begin{abstract}
+\par In the era of technology, millions of digital texts are generated every day. To derive useful information from these textual data, text mining has become a popular area of both research and business. One of the most important task of text mining is text classification.
+\par In this thesis, we propose a vector space model for multiclass text classification, the word vectors---CopeOpi vectors. We expand CopeOpi scores which are used in Chinese sentiment analysis, to CopeOpi vectors which can be used in multiclass text classification without the language limit. We verify the functionality of CopeOpi vectors by a series of text classification problems, including sentiment analysis and topic categorization, in both English and Chinese. We make comparisons with several commonly-used features for text classification, and examine these features on different types of machine learning algorithms. The results show that CopeOpi vectors can produce comparable results with a smaller vector size and shorter training time. CopeOpi vectors are effective and efficient features for multiclass text classification.
+~\newline
+~\newline
+\textbf{Keywords:} Text classification; Vector space model; Word vector
+~\newline
+\end{abstract}
+\end{@twocolumnfalse}
+]
+\input{chapters/scheme321.tex}
+~\newline
+\input{chapters/scheme322.tex}
+\end{document}

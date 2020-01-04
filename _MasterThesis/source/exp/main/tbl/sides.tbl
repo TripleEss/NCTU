@@ -1,0 +1,10 @@
+kNN NB LR SVM NN 
+copeopi_00ACT5
+copeopi_00BCT5
+copeopi_00CCT5
+ngram_001
+lsi_n200
+tfidf_001
+lsi_t200
+word2vec_200
+glove_200

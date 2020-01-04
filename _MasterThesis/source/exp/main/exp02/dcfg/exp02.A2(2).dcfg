@@ -1,0 +1,20 @@
+[
+    {
+        "mode": "train_test_split",
+        "train_size": 0.5,
+        "work_dir": "exp\\main\\exp02\\A2",
+        "files": [
+            "exp\\main\\exp02\\A2\\data\\data.A2.train",
+            "exp\\main\\exp02\\A2\\data\\data.A2.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2
+        ],
+        "lang": "zh",
+        "preproc": {
+            "tokenized": true
+        }
+    }
+]

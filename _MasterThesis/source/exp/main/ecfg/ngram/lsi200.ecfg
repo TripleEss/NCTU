@@ -1,0 +1,172 @@
+[
+    {
+        "name": "kNN_lsi_n200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "ngram",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_lsi_n200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "ngram",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_lsi_n200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "ngram",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_lsi_n200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "ngram",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_lsi_n200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "ngram",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "kNN_lsi_t200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "tfidf",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_lsi_t200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "tfidf",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_lsi_t200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "tfidf",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_lsi_t200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "tfidf",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_lsi_t200",
+        "feature": {
+            "type": "lsi",
+            "init_kwargs": {
+                "mat": "tfidf",
+                "n_components": 200
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    }
+]

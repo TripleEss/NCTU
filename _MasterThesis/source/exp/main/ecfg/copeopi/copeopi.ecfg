@@ -1,0 +1,246 @@
+[
+    {
+        "name": "kNN_copeopi_00ACT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {
+                "default_pairs": [
+                    "oaa"
+                ],
+                "min_count_mode": "count",
+                "min_count": 5,
+                "fout": "copeopiACT5"
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_copeopi_00ACT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00ACT5"
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_copeopi_00ACT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00ACT5"
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_copeopi_00ACT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00ACT5"
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_copeopi_00ACT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00ACT5"
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "kNN_copeopi_00BCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {
+                "default_pairs": [
+                    "oao"
+                ],
+                "min_count_mode": "count",
+                "min_count": 5,
+                "fout": "copeopiBCT5"
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_copeopi_00BCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00BCT5"
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_copeopi_00BCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00BCT5"
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_copeopi_00BCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00BCT5"
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_copeopi_00BCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00BCT5"
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "kNN_copeopi_00CCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {
+                "default_pairs": [
+                    "oaa",
+                    "oao"
+                ],
+                "min_count_mode": "count",
+                "min_count": 5,
+                "fout": "copeopiCCT5"
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_copeopi_00CCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00CCT5"
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_copeopi_00CCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00CCT5"
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_copeopi_00CCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00CCT5"
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_copeopi_00CCT5",
+        "feature": {
+            "type": "copeopi",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "copeopi00CCT5"
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    }
+]

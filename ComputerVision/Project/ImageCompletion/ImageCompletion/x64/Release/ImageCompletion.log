@@ -1,0 +1,13 @@
+﻿  ImageCompletion.cpp
+D:\Github\NCTU\ComputerVision\Project\ImageCompletion\ImageCompletion\ImageCompletion.cpp(161,127): warning C4244: '=': 將 'double' 轉換為 '_Tp'，由於類型不同，可能導致資料遺失
+D:\Github\NCTU\ComputerVision\Project\ImageCompletion\ImageCompletion\ImageCompletion.cpp(161,127): warning C4244:         with
+D:\Github\NCTU\ComputerVision\Project\ImageCompletion\ImageCompletion\ImageCompletion.cpp(161,127): warning C4244:         [
+D:\Github\NCTU\ComputerVision\Project\ImageCompletion\ImageCompletion\ImageCompletion.cpp(161,127): warning C4244:             _Tp=float
+D:\Github\NCTU\ComputerVision\Project\ImageCompletion\ImageCompletion\ImageCompletion.cpp(161,127): warning C4244:         ]
+D:\Github\NCTU\ComputerVision\Project\ImageCompletion\ImageCompletion\ImageCompletion.cpp(189,1): warning C4305: '正在初始化': 從 'int' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+D:\Github\NCTU\ComputerVision\Project\ImageCompletion\ImageCompletion\ImageCompletion.cpp(208,19): warning C4244: '正在初始化': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+  正在產生程式碼
+  Previous IPDB not found, fall back to full compilation.
+  All 259 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成程式碼產生
+  ImageCompletion.vcxproj -> D:\Github\NCTU\ComputerVision\Project\ImageCompletion\x64\Release\ImageCompletion.exe

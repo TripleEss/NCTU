@@ -1,0 +1,61 @@
+(4)
+val suml = foldl op+ 0; is better
+as foldl is a tail-recursive function and can be optimization by Scheme compiler
+
+(5a)
+O(n), n is the size of the array
+worst case: m is always middle index of the array
+2*(n/2)+2*((n/2)/2)+...+2*1
+=n+n/2+n/4+...+2
+=(2*(2^(log2(n))-1))/(2-1)
+
+(5b)
+void qsort(int l,int h)
+{
+   while(l<h)
+   {
+      int m=partition(l,h);
+      if(m-1-l<h-m-1)
+      {
+         qsort(l,m-1);
+         qsort(m+1,h);
+      }
+      else
+      {
+         qsort(m+1,h);
+         qsort(l,m-1);
+      }
+ }
+}
+
+(5c)
+O(log(n)), n is the size of the array
+s(n)
+<=s(n/2)+O(1)
+<=(s(n/4)+O(1))+O(1)
+<=((s(n/8)+O(1))+O(1))+O(1)
+=s(0)+O(log(n))
+
+(5d)
+Tail-recursive optimization is just reduce the space used by runtime stack, so the executing time does not change.
+The time complexity is the same.
+
+(6a)
+¢z¢w¢w¢w¢w¢w¢w¢{
+¢xn 0,false ¢xodd   ¢{
+¢u¢w¢w¢w¢w¢w¢w¢t          ¡õ
+¢xn 1           ¢xeven ¢t
+¢u¢w¢w¢w¢w¢w¢w¢t          ¡õ
+¢xn 2           ¢xodd   ¢t
+¢u¢w¢w¢w¢w¢w¢w¢t          ¡õ
+¢x n 3          ¢xeven ¢t
+¢u¢w¢w¢w¢w¢w¢w¢t          ¡õ
+¢x                 ¢xmain ¢}
+¢|¢w¢w¢w¢w¢w¢w¢}
+(6b)
+¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{
+¢xn   3        2        1       0       ¢xeven   ¢{
+¢x   odd  even  odd  false   ¢x^odd ¡õ
+¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t            ¡õ
+¢x                                            ¢x  main ¢}
+¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}

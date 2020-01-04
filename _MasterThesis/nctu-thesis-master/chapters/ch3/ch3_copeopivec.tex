@@ -1,0 +1,89 @@
+\chapter{Methodology: CopeOpi Vectors}
+\section{From CopeOpi Scores to Augmented CopeOpi Scores}
+\subsection{CopeOpi Scores}
+\par CopeOpi scores\cite{ku2007score} are numeric sentiment scores of Chinese characters and Chinese words, which can be used to detect the sentiment polarities and measure the strength of sentiment polarities. The basic idea is that the meaning of a Chinese word is the function of its composing characters, so the sentiment of a Chinese word can also be determined from the sentiments of its composing characters.
+\par They assume that Chinese characters in a Chinese positive opinion word tend to be positive, and Chinese characters in a Chinese negative opinion word tend to be negative. They adopt a Chinese sentiment dictionary, the NTU sentiment dictionary (NTUSD)\cite{ku2007ntusd}, as Chinese opinion seed words, and take the frequency of each Chinese character in these Chinese opinion seed words as clues to discover latent sentiments.
+\par Once the CopeOpi scores of Chinese characters are available, the CopeOpi score of a Chinese word can be determined from the CopeOpi scores of its composing characters by applying a scoring function according to its morphological type\footnote{In linguistics, morphology is the study of the structure of words:   how words are formed, and their relationship to each other in a language.}, or simply taking the average\cite{ku2009morph}.
+\input{chapters/ch3/figure/freqmat31.tex}
+\input{chapters/ch3/scheme/scheme311.tex}
+One application of CopeOpi scores is augmented NTU sentiment dictionary (ANTUSD)\cite{wang2006antusd}, a collection of sentiment statistics of Chinese words in several sentiment annotation works. For each Chinese  word in the dictionary, the number of positive annotations, neutral annotations, negative annotations, non-opinionated annotations and not-a-word annotations are recorded, and the CopeOpi score is also provided.
+\subsection{Augmented CopeOpi Scores}
+\par The structure of the frequency matrix of CopeOpi scores relates to its potential applications. In the frequency matrix of CopeOpi scores, the basic units are Chinese characters and the contexts are corpora of labeled Chinese opinion words, so CopeOpi scores find their applications in Chinese sentiment analysis.
+\par However, since the core of CopeOpi scores is a bag-of-units method which is generally adopted in nature language processing, we think it is possible to augment their usefulness and widen their range of applications.
+\par Here we propose a new computation scheme for augmented CopeOpi scores. We transform CopeOpi scores from sentiment scores to class-tendency scores by mapping the sentiment polarities in sentiment analysis, i.e., positive or negative, to the set membership in binary classification, i.e., being in a class or not. We extend the premises and assume that words in documents of some classes tend to be in those classes. We modify the structure of the frequency matrix and
+\begin{itemize}
+\item change the basic units from Chinese characters to words.
+\item change the contexts from corpora of Chinese opinion words to corpora of binary annotated documents.
+\end{itemize}
+\input{chapters/ch3/figure/freqmat32.tex}
+\input{chapters/ch3/scheme/scheme312.tex}
+\partopic{Confidence in Augmented CopeOpi Scores}
+\par According to Zipf's law, given some corpora of natural language, the frequency of a word is inversely proportional to its rank in the frequency table\cite{manning1999nlp}. The most frequent word occurs approximately twice as often as the second one, three times as often as the third one, etc. There are a few words that are very common and a lot of words that are very rare. Considering the later cases, we shall have less confidence in the augmented CopeOpi scores of rare words due to the lack of sufficient statistics, and besides, they are easily biased and overestimated since the occurrences of a rare word might be all in one class and absent in the other.
+\par To reduce the effects of imprecise augmented CopeOpi scores of rare words, we can impose confidence values to penalize these values. We regard words whose maximal class frequency less than the average class frequency of all words as rare words, and smooth their augmented CopeOpi scores by multiplying their confidence values which is defined as a logistic function\footnote{The mentioned scheme of confidence values is merely the one we use in our experiments but not a standard scheme. You can design one for your applications.}.
+\begin{equation*}
+\begin{gathered}
+	fc^{\max}_{w_i} = \max({fc_1}_{w_i},{fc_2}_{w_i},\dots,{fc_n}_{w_i})
+\\[\eqlineskip]
+	fc_{\avg} = \dfrac {
+		\sum_{j=1}^m \sum_{k=1}^n {fc_k}_{w_j}
+	}{
+		m \times n
+	}
+\\[\eqlineskip]
+	\mathcal{CF}_{w_i} =
+	\begin{cases}
+		1
+		&\text{if $fc^{\max}_{w_i} \geq fc_{\avg}$}
+	\\
+		\dfrac{1}{1 + 3 \exp(-4(\frac{fc^{\max}_{w_i}}{fc_{\avg}}))}
+		&\text{otherwise}
+	\end{cases}
+\\[\eqlineskip]
+	\mathcal{CF}\text{-}\mathcal{COP}_{w_i} = \mathcal{CF}_{w_i} \times \mathcal{COP}_{w_i}
+\end{gathered}
+\end{equation*}
+where ${fc_k}_{w_i}$ is the frequency of word $w_i$ in class $k$;
+$fc^{\max}_{w_i}$ and $fc_{\avg}$ are the maximal class frequency of word $w_i$ and the average class frequency of all words;
+$n$ and $m$ are the number of classes and the number unique words in corpora;
+the confidence value $\mathcal{CF}_{w_i}$ of word $w_i$ is defined as a piece-wise function which behaves differently based on the maximal class frequency $fc^{\max}_{w_i}$ of word $w_i$.
+\begin{figure}[t]
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\includegraphics[height=6cm]{chapters/ch3/figure/conf.png}
+	\caption{The logistic function of $\mathcal{CF}$}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\includegraphics[height=6cm]{chapters/ch3/figure/conf_ex.png}
+	\caption{Distributions of $\mathcal{COP}$ and $\mathcal{CF}\text{-}\mathcal{COP}$}
+\end{minipage}
+\end{figure}
+
+\section{From Augmented CopeOpi Scores to CopeOpi Vectors}
+\subsection{CopeOpi Vectors}
+\par CopeOpi scores now become augmented CopeOpi scores, class-tendency scores which can be used in languages other than Chinese since we change the basic units from Chinese characters to words, and be applied to binary text classification other than sentiment analysis since we change the contexts from corpora of Chinese opinion words to corpora of binary annotated documents.
+\par However, there are many text classification problems with more than two classes. Augmented CopeOpi scores can not help solve them due to the fact that they are scalars and can represent at most two oppositions by being positive or being negative.
+\par Here we find a way to make augmented CopeOpi scores applicable to multiclass text classification. We expand augmented CopeOpi scores to CopeOpi vectors by utilizing divide-and-conquer techniques for multiclass classification. We decompose a multiclass text classification problem into multiple binary text classification subproblems, and compute an augmented CopeOpi score for each subproblem as a component of CopeOpi vectors. Several strategies have been proposed for such a decomposition\cite{aly2005multiclass}.
+\input{chapters/ch3/figure/freqmat33.tex}
+~\newline
+~\newline
+\clearpage
+\partopic{One-versus-Rest\footnote{Also known as one-versus-all (OVA), one-against-rest (OAR), one-against-all (OAA).} Strategy (OVR)}
+\par In an $n$-class text classification problem, we require $n$ augmented CopeOpi scores,
+where each augmented CopeOpi score is computed to discriminate between one of the classes and the rest of the classes.
+\input{chapters/ch3/scheme/scheme321.tex}
+\partopic{One-versus-One\footnote{Also known as one-against-one (OAO).} Strategy (OVO)}
+\par In an $n$-class text classification problem, we require $\frac{1}{2}n(n-1)$ augmented CopeOpi scores,
+where each augmented CopeOpi score is computed to discriminate between a pair of classes.
+\input{chapters/ch3/scheme/scheme322.tex}
+
+\clearpage
+\subsection{Customized CopeOpi Vectors}\label{sec:customized}
+\par One-versus-rest strategy and one-versus-one strategy guide the basic way to construct CopeOpi vectors which can be applied to multiclass text classification.
+\par However, in general, any subset of classes can be grouped as a positive set or a negative set. CopeOpi vectors can be customized based on different choices of subset-pairs.
+~\newline
+~\newline
+\partopic{Subset-versus-Subset Strategy (SVS)}
+\par In an $n$-class text classification problem, we can have at most $(2^n-1)^2$ augmented CopeOpi scores\footnote{We only eliminate the empty set cases, but not all subset-pairs can produce a discriminative augmented CopeOpi score.},
+where each augmented CopeOpi score is computed to discriminate between a pair of subsets of classes.
+\input{chapters/ch3/scheme/scheme323.tex}

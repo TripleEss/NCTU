@@ -1,0 +1,48 @@
+\contentsline {chapter}{\textbf {摘要}}{v}{section*.1}
+\contentsline {chapter}{\textbf {Abstract}}{vi}{section*.2}
+\contentsline {chapter}{\textbf {Acknowledgement}}{vii}{section*.3}
+\contentsline {chapter}{\textbf {Table of Contents}}{viii}{section*.5}
+\contentsline {chapter}{\textbf {List of Figures}}{x}{section*.6}
+\contentsline {chapter}{\textbf {List of Tables}}{xi}{section*.7}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}The Text Classification Problems}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Definition}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Applications}{2}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Thesis Outlines}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Related Works}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Vector Space Models}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Similarity of Documents: The Term-document Matrix}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Similarity of Words: The Word-context Matrix}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Similarity of Relations: The Pair-pattern Matrix}{6}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Machine Learning for Text Classification}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}k-Nearest Neighbor Classifiers}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Naive Bayes Classifiers}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Logistic Regression Classifiers}{7}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Support Vector Machine Classifiers}{8}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Neural Network Classifiers}{8}{subsection.2.2.5}
+\contentsline {chapter}{\numberline {3}Methodology: CopeOpi Vectors}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}From CopeOpi Scores to Augmented CopeOpi Scores}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}CopeOpi Scores}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Augmented CopeOpi Scores}{11}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}From Augmented CopeOpi Scores to CopeOpi Vectors}{14}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}CopeOpi Vectors}{14}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Customized CopeOpi Vectors}{18}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Experiments and Results}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}Flowchart and Settings}{20}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Sampling}{21}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Preprocessing}{21}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Feature Transformation, Selection and Extraction}{22}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Training}{23}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Testing and Evaluation}{24}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Experiments: Sentiment Analysis}{25}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Datasets}{25}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Results and Observations}{26}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Experiments: Topic Categorization}{30}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Datasets}{30}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Results and Observations}{31}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Summary}{36}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusions and Future Works}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conclusions}{37}{section.5.1}
+\contentsline {section}{\numberline {5.2}Future Works}{37}{section.5.2}
+\contentsline {chapter}{\textbf {References}}{39}{section*.39}
+\contentsfinish 

@@ -1,0 +1,42 @@
+\begin{scheme}{Augmented CopeOpi Scores}{}
+Given two corpora of labeled documents $\mathbb{D}_p$ and $\mathbb{D}_n$,
+and the corresponding classes $p$ and $not\text{-}p$.
+\begin{itemize}
+\item $\mathbb{D}_p = \{ \langle d,c \rangle \where \text{$d$ is a document labeled as class $c=p$} \}$
+	\begin{itemize}
+	\item the vocabulary $\mathbb{V}_p$ is a set of unique words in $\mathbb{D}_p$
+	\end{itemize}
+\item $\mathbb{D}_n = \{ \langle d,c \rangle \where \text{$d$ is a document labeled as class $c=not\text{-}p$} \}$
+	\begin{itemize}
+	\item the vocabulary $\mathbb{V}_n$ is a set of unique words in $\mathbb{D}_n$
+	\end{itemize}
+\end{itemize}
+For each word $w_i \in \mathbb{V}_p \cup \mathbb{V}_n$,
+we can compute its CopeOpi score $\mathcal{COP}_{w_i}$.
+\begin{equation*}
+\begin{gathered}
+	\mathcal{P}_{w_i} = \dfrac{
+		fp_{w_i} \divby \sum_{w \in \mathbb{V}_p} fp_w
+	}{
+		fp_{w_i} \divby \sum_{w \in \mathbb{V}_p} fp_w +
+		fn_{w_i} \divby \sum_{w \in \mathbb{V}_n} fn_w
+	}
+\\[\eqlineskip]
+	\mathcal{N}_{w_i} = \dfrac{
+		fn_{w_i} \divby \sum_{w \in \mathbb{V}_n} fn_w
+	}{
+		fp_{w_i} \divby \sum_{w \in \mathbb{V}_p} fp_w +
+		fn_{w_i} \divby \sum_{w \in \mathbb{V}_n} fn_w
+	}
+\\[\eqlineskip]
+	\mathcal{COP}_{w_i} = \mathcal{P}_{w_i} - \mathcal{N}_{w_i}
+\end{gathered}
+\end{equation*}
+where $\mathcal{P}_{w_i}$ and $\mathcal{N}_{w_i}$ are the normalized probabilities of
+word $w_i$ being in class $p$ and being in class $not\text{-}p$;
+$fp_{w_i}$ and $fn_{w_i}$ are the frequencies of 
+word $w_i$ in corpus $\mathbb{D}_p$ and in corpus $\mathbb{D}_n$;
+the CopeOpi score $\mathcal{COP}_{w_i}$ of
+word $w_i$ is defined as the difference of the two opposite normalized probabilities, ranged from
+$+1$(being in class $p$) to $-1$(being in class $not\text{-}p$).
+\end{scheme}

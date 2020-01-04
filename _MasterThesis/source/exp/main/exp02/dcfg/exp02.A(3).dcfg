@@ -1,0 +1,57 @@
+[
+    {
+        "mode": "train_test_split",
+        "train_size": 0.5,
+        "work_dir": "exp\\main\\exp02\\A1",
+        "files": [
+            "exp\\main\\exp02\\A1\\data\\data.A1.train",
+            "exp\\main\\exp02\\A1\\data\\data.A1.test"
+        ],
+        "cls_set": [
+            0,
+            1
+        ],
+        "lang": "zh",
+        "preproc": {
+            "tokenized": true
+        }
+    },
+    {
+        "mode": "train_test_split",
+        "train_size": 0.5,
+        "work_dir": "exp\\main\\exp02\\A2",
+        "files": [
+            "exp\\main\\exp02\\A2\\data\\data.A2.train",
+            "exp\\main\\exp02\\A2\\data\\data.A2.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2
+        ],
+        "lang": "zh",
+        "preproc": {
+            "tokenized": true
+        }
+    },
+    {
+        "mode": "train_test_split",
+        "train_size": 0.5,
+        "work_dir": "exp\\main\\exp02\\A3",
+        "files": [
+            "exp\\main\\exp02\\A3\\data\\data.A3.train",
+            "exp\\main\\exp02\\A3\\data\\data.A3.test"
+        ],
+        "cls_set": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "lang": "zh",
+        "preproc": {
+            "tokenized": true
+        }
+    }
+]

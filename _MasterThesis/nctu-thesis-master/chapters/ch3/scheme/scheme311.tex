@@ -1,0 +1,55 @@
+\begin{scheme}{CopeOpi Scores}{}
+Given two corpora of labeled Chinese opinion words $\mathbb{W}_p$ and $\mathbb{W}_n$,
+and the corresponding sentiment polarities $positive$ and $negative$.
+\begin{itemize}
+\item $\mathbb{W}_p = \{ w \where \text{$w$ is a Chinese opinion word labeled as $positive$} \}$
+	\begin{itemize}
+	\item the vocabulary $\mathbb{V}_p$ is a set of unique Chinese characters in $\mathbb{W}_p$
+	\end{itemize}
+\item $\mathbb{W}_n = \{ w \where \text{$w$ is a Chinese opinion word labeled as $negative$} \}$
+	\begin{itemize}
+	\item the vocabulary $\mathbb{V}_n$ is a set of unique Chinese characters in $\mathbb{W}_n$
+	\end{itemize}
+\end{itemize}
+For each Chinese character $c_i \in \mathbb{V}_p \cup \mathbb{V}_n$,
+we can compute its CopeOpi score $\mathcal{COP}_{c_i}$.
+\begin{equation*}
+\begin{gathered}
+	\mathcal{P}_{c_i} = \dfrac{
+		fp_{c_i} \divby \sum_{c \in \mathbb{V}_p} fp_c
+	}{
+		fp_{c_i} \divby \sum_{c \in \mathbb{V}_p} fp_c +
+		fn_{c_i} \divby \sum_{c \in \mathbb{V}_n} fn_c
+	}
+\\[\eqlineskip]
+	\mathcal{N}_{c_i} = \dfrac{
+		fn_{c_i} \divby \sum_{c \in \mathbb{V}_n} fn_c
+	}{
+		fp_{c_i} \divby \sum_{c \in \mathbb{V}_p} fp_c +
+		fn_{c_i} \divby \sum_{c \in \mathbb{V}_n} fn_c
+	}
+\\[\eqlineskip]
+	\mathcal{COP}_{c_i} = \mathcal{P}_{c_i} - \mathcal{N}_{c_i}
+\end{gathered}
+\end{equation*}
+where $\mathcal{P}_{c_i}$ and $\mathcal{N}_{c_i}$ are the normalized probabilities of
+Chinese character $c_i$ being positive and being negative;
+$fp_{c_i}$ and $fn_{c_i}$ are the frequencies of 
+Chinese character $c_i$ in corpus $\mathbb{W}_p$ and in corpus $\mathbb{W}_n$;
+the CopeOpi score $\mathcal{COP}_{c_i}$ of
+Chinese character $c_i$ is defined as the difference of the two opposite normalized probabilities, ranged from
+$+1$(being positive) to $-1$(being negative).
+\tcbline
+For each Chinese word $w_j=c_1c_2 \cdots c_l$, we can compute its CopeOpi score $\mathcal{COP}_{w_j}$.
+\begin{equation*}
+\mathcal{COP}_{w_j=c_1c_2\cdots c_l} =
+\begin{cases}
+	S_m(c_1c_2 \cdots c_l)
+	& \text{if the morphological type of $w_j$ is $m$}
+\\
+	\dfrac{1}{l} \sum_{k=1}^l \mathcal{COP}_{c_k}
+	& \text{otherwise}
+\end{cases}
+\end{equation*}
+where $S_m$ is the scoring function of morphological type $m$.
+\end{scheme}

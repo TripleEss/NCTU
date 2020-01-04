@@ -1,0 +1,14 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+The style file: IEEEtran.bst
+Database file #1: bib/ieeeBSTcontrol.bib
+Database file #2: bib/thesis.bib
+Warning--I'm ignoring koller1997nb's extra "title" field
+--line 224 of file bib/thesis.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
+Warning--missing publisher in firth1957vsmh2
+
+Done.
+(There were 2 warnings)

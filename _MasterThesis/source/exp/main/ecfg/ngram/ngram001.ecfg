@@ -1,0 +1,202 @@
+[
+    {
+        "name": "kNN_ngram_001",
+        "feature": {
+            "type": "ngram",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_ngram_001",
+        "feature": {
+            "type": "ngram",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_ngram_001",
+        "feature": {
+            "type": "ngram",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_ngram_001",
+        "feature": {
+            "type": "ngram",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_ngram_001",
+        "feature": {
+            "type": "ngram",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "kNN_tfidf_001",
+        "feature": {
+            "type": "tfidf",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_tfidf_001",
+        "feature": {
+            "type": "tfidf",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_tfidf_001",
+        "feature": {
+            "type": "tfidf",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_tfidf_001",
+        "feature": {
+            "type": "tfidf",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_tfidf_001",
+        "feature": {
+            "type": "tfidf",
+            "init_kwargs": {
+                "ngram_range": [
+                    1,
+                    1
+                ],
+                "min_df": 0.001
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    }
+]

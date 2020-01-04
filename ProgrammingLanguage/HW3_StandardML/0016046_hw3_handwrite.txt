@@ -1,0 +1,188 @@
+(1a)
+£ff.£fa.£fb.£fc.c (f a) (f b)
+f: t1   a: t2
+(f a): t3
+-----t1=t2->t3
+f: t1   b: t4
+(f b): t5
+-----t1=t4->t5
+c: t7   (f a) (f b):t6
+-----t3=t5->t6
+c (f a) (f b): t8
+-----t7=t6->t8
+£ff.£fa.£fb.£fc.c (f a) (f b): t9
+
+t9=t1->t2->t4->t7->t8
+=(t2->t3)->t2->t4->(t6->t8)->t8
+=(t2->t5->t6)->t2->t4->(t6->t8)->t8
+t2=t4
+t3=t5
+
+(1b)
+£ff.£fa.£fb.b f (f a b)
+f: t1   a: t2
+(f a): t3
+-----t1=t2->t3
+(f a b): t5   b:t4
+-----t3=t4->t5
+(b f): t6
+-----t4=t1->t6
+b f (f a b): t7
+-----t6=t5->t7
+£ff.£fa.£fb.b f (f a b): t8
+
+t8=t1->t2->t4->t7
+=(t2->t3)->t2->(t1->t6)->t7
+=(t2->(t4->t5))->t2->((t2->t3)->(t5->t7))->t7
+=(t2->((t1->t6)->t5))->t2->((t2->t3)->(t5->t7))->t7
+=...
+t1 is an infinite type->NO type
+
+(1c)
+fix=£ff.f(£fx.fix f x)
+fix: t1   f: t2
+(fix f): t3
+-----t1=t2->t3
+(fix f x): t5   x:t4
+-----t3=t4->t5
+(£fx.fix f x): t6
+-----t6=t4->t5
+f(£fx.fix f x): t7
+-----t2=t6->t7
+£ff.f(£fx.fix f x): t8
+-----t8=t2->t7
+fix=£ff.f(£fx.fix f x): t1
+
+t1=t2->t8
+=(t6->t7)->(t2->t7)
+=((t4->t5)->t7)->((t6->t7)->t7)
+=((t4->t5)->t7)->(((t4->t5)->t7)->t7)
+ 
+(2a)
+x¡ò(y¡óz)=(x¡òy)¡óz
+y¡ò(foldl ¡ó z xs)=foldl ¡ó (y¡òz) xs
+
+Basis: xs=[]
+l.h.s:
+y¡ò(foldl ¡ó z [])=y¡òz
+r.h.s:
+foldl ¡ó (y¡òz) []=y¡òz
+l.h.s=r.h.s
+
+xs=w::ws
+foldl ¡ó (y¡òz) (w::ws)
+=foldl ¡ó (¡ó((y¡òz),w)) ws
+=foldl ¡ó ((y¡òz)¡ów) ws
+=foldl ¡ó (y¡ò(z¡ów)) ws
+=y¡ò(foldl ¡ó (z¡ów) ws)
+=y¡ò(foldl ¡ó (¡ó(z,w)) ws)
+=y¡ò(foldl ¡ó z (w::ws))
+=y¡ò(foldl ¡ó z xs)
+
+(2b)
+x¡ò(y¡óz)=(x¡òy)¡óz and x¡òa=a¡óx
+foldr ¡ò a xs=foldl ¡óa xs
+
+Basis: xs=[]
+l.h.s:
+foldr ¡ò a []=a
+r.h.s:
+foldl ¡óa []=a
+l.h.s=r.h.s
+
+xs=w::ws
+foldr ¡ò a xs
+=foldr ¡ò a (w::ws)
+=¡ò(w,foldr ¡ò a ws)
+=¡ò(w,foldl ¡ó a ws)
+=w¡ò(foldl ¡ó a ws)
+=foldl ¡ó (w¡òa) ws
+=foldl ¡ó (a¡ów) ws
+=foldl ¡ó (¡ó(a,w)) ws
+=foldl ¡ó a (w::ws)
+=foldl ¡ó a xs
+
+(2c)
+(x¡òy)¡òz=x¡ò(y¡òz) and x¡òa=x and a¡òx=x
+foldr ¡ò a xs=foldl ¡ò a xs
+
+Basis: xs=[]
+l.h.s:
+foldr ¡ò a []=a
+r.h.s:
+foldl ¡òa []=a
+l.h.s=r.h.s
+
+(x¡òy)¡òz=x¡ò(y¡òz) 
+y¡ò(foldl ¡ò z xs)=foldl ¡ò (y¡òz) xs
+xs=w::ws
+l.h.s:
+foldr ¡ò a xs
+=foldr ¡ò a (w::ws)
+=¡ò(w,foldr ¡ò a ws)
+=¡ò(w,foldl ¡ò a ws)
+=w¡ò(foldl ¡ò a ws)
+=foldl ¡ò (w¡òa) ws
+=foldl ¡ò (a¡òw) ws
+=foldl ¡ò (¡ò(a,w)) ws
+=foldl ¡ò a (w::ws)
+=foldl ¡ò a xs
+
+(2d)
+val sumr=foldr op+ 0;
+val suml=foldl op+ 0;
+sumr xs=suml xs
+
+Basis: xs=[]
+l.h.s:
+sumr []=foldr op+ 0 []=0
+r.h.s:
+suml []=foldl op+ 0 []=0
+
+xs=w::ws
+sumr xs
+=sumr (w::ws)
+=foldr op+ 0 (w::ws)
+=op+(w,foldr op+ 0 ws)
+=op+(w,foldl op+ 0 ws)
+=w op+ (foldl op+ 0 ws)
+=foldl op+ (w op+ 0) ws
+=foldl op+ (op+(w,0)) ws
+=foldl op+ 0 (w::ws)
+=foldl op+ 0 xs
+=suml xs
+
+(2e)
+fun revr xs=foldr (fn (x,xs)=>xs@[x]) [] xs;
+fun revl xs=foldl (fn (xs,x)=>x::xs) [] xs;
+revr=revl
+revr xs=revl xs
+
+Basis: xs=[]
+l.h.s:
+revr []=foldr (fn (x,xs)=>xs@[x]) [] []=[]
+r.h.s:
+revl []=foldl (fn (xs,x)=>x::xs) [] []=[]
+
+xs=w::ws
+revr xs
+=revr (w::ws)
+=foldr (fn (x,xs)=>xs@[x]) [] (w::ws)
+=(fn (x,xs)=>xs@[x])(w,foldr (fn (x,xs)=>xs@[x]) [] ws)   (foldr.2)
+=(fn (x,xs)=>xs@[x])(w,foldl (fn (xs,x)=>x::xs) [] ws)   (2b: foldr ¡ò a xs=foldl ¡óa xs)
+=w (fn (x,xs)=>xs@[x]) (foldl (fn (xs,x)=>x::xs) [] ws)
+=foldl (fn (xs,x)=>x::xs) (w (fn (x,xs)=>xs@[x]) []) ws   (2a: y¡ò(foldl ¡ó z xs)=foldl ¡ó (y¡òz) xs)
+=foldl (fn (xs,x)=>x::xs) ([] (fn (xs,x)=>x::xs) w) ws    (2b: x¡òa=a¡óx)
+=foldl (fn (xs,x)=>x::xs) ((fn (xs,x)=>x::xs)([],w)) ws
+=foldl (fn (xs,x)=>x::xs) [] (w::ws)   (foldl.2)
+=foldl (fn (xs,x)=>x::xs) [] xs
+=revl xs
+
+(4a)
+[Succ]->[Succ]->[Succ]->[Zero]
+
+(6a)
+X(2)constructed
+X(1)constructed
+X(1)destructed
+X(2)destructed

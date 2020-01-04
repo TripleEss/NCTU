@@ -1,0 +1,51 @@
+(6)
+(a)
+Y=£ff.(£fx.f(xx))(£fx.f(xx))
+G=£fy.£ff.f(yf)
+YG f
+=((£ff.(£fx.f(xx))(£fx.f(xx)))G) f
+=((£fx.G(xx))(£fx.G(xx))) f
+=G((£fx.G(xx))(£fx.G(xx))) f
+=(£fy.£ff.f(yf)) ((£fx.G(xx))(£fx.G(xx))) f
+=f(((£fx.G(xx))(£fx.G(xx)))f)
+=f(YG f)
+
+(b)
+Y=£ff.(£fx.f(£fy.xxy))(£fx.f(£fy.xxy))
+G=£fy.£ff.f(£fz.yfz)
+YG f
+=(£ff.(£fx.f(£fy.xxy))(£fx.f(£fy.xxy))G) f
+=((£fx.G(£fy.xxy))(£fx.G(£fy.xxy))) f
+=G(£fy.(£fx.G(£fy.xxy))(£fx.G(£fy.xxy))y) f
+=(£fy.£ff.f(£fz.yfz)) (£fy.(£fx.G(£fy.xxy))(£fx.G(£fy.xxy))y) f
+=f(£fz.(£fy.(£fx.G(£fy.xxy))(£fx.G(£fy.xxy))y) f z)
+=f(£fz.YG f z)
+=f(YG f)
+
+(7)
+(a)
+compile(£fx.£fy.yx)
+=>abstract x (compile (£fy.yx))
+=>abstract x (abstract y) (compile (yx))
+=>abstract x (abstract y) (compile y (compile x))
+=>abstract x (abstract y) (y (compile x))
+=>abstract x (abstract y (yx))
+=>abstract x (S (abstract y y) (abstract y x))
+=>abstract x (S I (K x))
+=>S (abstract x (S I) (abstract x (K x)))
+=>S ((S (abstact x S) (abstract x I)) (S (abstract x K) (abstract x x))
+=>S (S (K S) (K I)) (S (K K) I)
+
+(b)
+S (S (K S) (K I)) (S (K K) I) 2 + 3
+=(S (K S) (K I)) 2 ((S (K K) I) 2) + 3
+=(K S) 2 ((K I) 2) ((S (K K) I) 2) + 3
+=S ((K I) 2) ((S (K K) I) 2) + 3
+=((K I) 2) + (((S (K K) I) 2) +) 3
+=I + (((S (K K) I) 2) +) 3
+=+ (((S (K K) I) 2) +) 3
+=+ (K K) 2 (I 2) + 3
+=+ K (I 2) + 3
+=+ I 2 3
+=+ 2 3
+=5

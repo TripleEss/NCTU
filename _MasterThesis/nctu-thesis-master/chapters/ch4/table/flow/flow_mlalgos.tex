@@ -1,0 +1,15 @@
+\begin{table}[h]
+\footnotesize
+\centering
+\caption{Experiment settings of machine learning algorithms}
+\label{tab:flow_mlalgos}
+\begin{tabular}{|l|m{0.565\textwidth}|}
+	\hline
+	\multicolumn{1}{|c|}{Machine Learining Algorithm} & \multicolumn{1}{c|}{Implementaion}                                                                                                                           \\ \hline
+	k-Nearest Neighbor (kNN)                          & \texttt{sklearn.neighbors.KNeighborsClassifier(n\_neighbors=40)}                                                                                             \\ \hline
+	Naive Bayes (NB)                                  & \parbox{0.385\textwidth}{\texttt{sklearn.naive\_bayes.MultinomialNB}} for BOW, TF-IDF\newline \parbox{0.385\textwidth}{\texttt{sklearn.naive\_bayes.GaussianNB}} for the others\\ \hline
+	Logistic Regression (LR)                          & \texttt{sklearn.linear\_model.LogisticRegression}                                                                                                            \\ \hline
+	Support Vector Machine (SVM)                      & \texttt{sklearn.svm.LinearSVC}                                                                                                                               \\ \hline
+	Neural Network (NN)                               & \texttt{sklearn.neural\_network.MLPClassifier}                                                                                                               \\ \hline
+\end{tabular}
+\end{table}

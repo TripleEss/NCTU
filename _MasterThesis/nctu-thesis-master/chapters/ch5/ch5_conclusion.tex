@@ -1,0 +1,16 @@
+\chapter{Conclusions and Future Works}
+\section{Conclusions}
+\par In this thesis, we propose a vector space model for multiclass text classification, the word vectors---CopeOpi vectors. We expand CopeOpi scores which are used in Chinese sentiment analysis, to CopeOpi vectors which can be used in multiclass text classification without the language limit.
+\par We verify the functionality of CopeOpi vectors by a series of text classification problems, including sentiment analysis and topic categorization, in both English and Chinese. We make comparisons with several commonly-used features for text classification, and examine these features on different types of machine learning algorithms. The results show that CopeOpi vectors can produce comparable results with a smaller vector size and shorter training time. CopeOpi vectors are effective and efficient features for multiclass text classification.
+\section{Future Works}
+\par Some issues about augmented CopeOpi scores and CopeOpi vectors are listed below as a reference for those who are interested in.
+~\newline
+~\newline
+\partopic{More Careful Term-weighting Schemes}
+\par Although CopeOpi vectors function normally without manually filtering irrelevant words, it does not mean these irrelevant words do not effect the resulting values.
+\par Since the original CopeOpi scores are computed from dictionaries, their term-weighting scheme is simply dividing the frequency of a word by the total frequency of all words. Now we compute augmented CopeOpi scores from nature language corpora, there are a lot of irrelevant words. Augmented CopeOpi scores may need a more careful term-weighting scheme to improve their precision.
+~\newline
+~\newline
+\partopic{Strategies to Customize CopeOpi Vectors}
+\par In section~\ref{sec:customized}, we mentioned that CopeOpi vectors can be customized based on different choices of subset-pairs. However, we have not comprehensively explored the capacity of  customized CopeOpi vectors in our experiments.
+\par Since the number of subset-pairs is exponential to the number of classes, and the number of structures of CopeOpi vectors are also exponential to the number of subset-pairs. It provides both flexibility and difficulty when someone wants to customize their CopeOpi vectors. We wonder that whether there are strategies to find the most effective pairs and construct the best CopeOpi vectors for an application.

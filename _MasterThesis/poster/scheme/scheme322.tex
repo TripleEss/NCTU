@@ -1,0 +1,60 @@
+\begin{scheme}{CopeOpi Vectors (One-versus-One)}{}
+Given $n$ corpora of labeled documents $\mathbb{D} = \{ \mathbb{D}_{c_1},\mathbb{D}_{c_2},\dots,\mathbb{D}_{c_n} \}$,
+and the corresponding classes $\mathbb{C} = \{ c_1,c_2,\dots,c_n \}$.
+\begin{itemize}
+\item $\mathbb{D}_{c_i} = \{ \langle d,c \rangle \where \text{$d$ is a document labeled as class $c=c_i$} \}$
+	\begin{itemize}
+	\item the vocabulary $\mathbb{V}_{c_i}$ is a set of unique words in $\mathbb{D}_{c_i}$
+	\end{itemize}
+\end{itemize}
+For each word $w_i \in \cup_{c \in \mathbb{C}} \mathbb{V}_{c}$,
+we can compute its CopeOpi vector $\overrightarrow{\mathcal{COP}}_{w_i}$ by one-versus-one strategy.
+\tcbline
+For each class-pair $c_j,c_k \in \mathbb{C}$, $1 \leq j < k \leq n$, we can construct two opposite sets,
+\begin{itemize}
+\item the positive set $\mathbb{P}^{c_j,c_k}_{w_i} = \{ c_j \}$
+	\begin{itemize}
+	\item the positive corpus ${\mathbb{D}_\mathbb{P}}^{c_j,c_k}_{w_i} = \{ \mathbb{D}_{c_j} \}$
+	\item the positive vocabulary ${\mathbb{V}_\mathbb{P}}^{c_j,c_k}_{w_i} = \mathbb{V}_{c_j}$
+	\end{itemize}
+\item the negative set $\mathbb{N}^{c_j,c_k}_{w_i} = \{ c_k \}$
+	\begin{itemize}
+	\item the negative corpus ${\mathbb{D}_\mathbb{N}}^{c_j,c_k}_{w_i} = \{ \mathbb{D}_{c_k} \}$
+	\item the negative vocabulary ${\mathbb{V}_\mathbb{N}}^{c_j,c_k}_{w_i} = \mathbb{V}_{c_k}$
+	\end{itemize}
+\end{itemize}
+and compute the augmented CopeOpi score $\mathcal{COP}^{c_j,c_k}_{w_i}$
+of word $w_i$ with respect to class-pair $c_j,c_k$ based on these two opposite sets.
+
+\begin{equation*}
+\begin{gathered}
+	\mathcal{P}^{c_j,c_k}_{w_i} = \dfrac{
+		fp^{c_j,c_k}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{P}}^{c_j,c_k}_{w_i}} fp^{c_j,c_k}_w
+	}{
+		fp^{c_j,c_k}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{P}}^{c_j,c_k}_{w_i}} fp^{c_j,c_k}_w +
+		fn^{c_j,c_k}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{N}}^{c_j,c_k}_{w_i}} fn^{c_j,c_k}_w
+	}
+\\[\eqlineskip]
+	\mathcal{N}^{c_j,c_k}_{w_i} = \dfrac{
+		fn^{c_j,c_k}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{N}}^{c_j,c_k}_{w_i}} fn^{c_j,c_k}_w
+	}{
+		fp^{c_j,c_k}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{P}}^{c_j,c_k}_{w_i}} fp^{c_j,c_k}_w +
+		fn^{c_j,c_k}_{w_i} \divby \sum_{w \in {\mathbb{V}_\mathbb{N}}^{c_j,c_k}_{w_i}} fn^{c_j,c_k}_w
+	}
+\\[\eqlineskip]
+	\mathcal{COP}^{c_j,c_k}_{w_i} = \mathcal{P}^{c_j,c_k}_{w_i} - \mathcal{N}^{c_j,c_k}_{w_i}
+\end{gathered}
+\end{equation*}
+where $\mathcal{P}^{c_j,c_k}_{w_i}$ and $\mathcal{N}^{c_j,c_k}_{w_i}$ are the normalized probabilities of
+word $w_i$ being in class $\mathbb{P}^{c_j,c_k}_{w_i}$ and being in class $\mathbb{N}^{c_j,c_k}_{w_i}$;
+$fp^{c_j,c_k}_{w_i}$ and $fn^{c_j,c_k}_{w_i}$ are the frequencies of 
+word $w_i$ in corpus ${\mathbb{D}_\mathbb{P}}^{c_j,c_k}_{w_i}$ and in corpus ${\mathbb{D}_\mathbb{N}}^{c_j,c_k}_{w_i}$;
+the CopeOpi score $\mathcal{COP}^{c_j,c_k}_{w_i}$ of
+word $w_i$ with respect to class-pair $c_j,c_k$ is defined as the difference of the two opposite normalized probabilities, ranged from
+$+1$(being in class $\mathbb{P}^{c_j,c_k}_{w_i}$) to $-1$(being in class $\mathbb{N}^{c_j,c_k}_{w_i}$).
+\tcbline
+The CopeOpi vector $\overrightarrow{\mathcal{COP}}_{w_i}$ of word $w_i$ is composed of these $\frac{1}{2}n(n-1)$ augmented CopeOpi scores.
+\begin{equation*}
+\overrightarrow{\mathcal{COP}}_{w_i} = (\mathcal{COP}^{c_1,c_2}_{w_i},\mathcal{COP}^{c_1,c_3}_{w_i},\dots,\mathcal{COP}^{c_{n-1},c_n}_{w_i})
+\end{equation*}
+\end{scheme}

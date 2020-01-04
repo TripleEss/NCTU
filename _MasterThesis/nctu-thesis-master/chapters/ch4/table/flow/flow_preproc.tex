@@ -1,0 +1,12 @@
+\begin{table}[h]
+\footnotesize
+\centering
+\caption{Experiment settings of preprocessings}
+\label{tab:flow_preproc}
+\begin{tabular}{|c|m{0.205\textwidth}|c|m{0.13\textwidth}|c|}
+	\hline
+	Language & \multicolumn{1}{c|}{Text Cleaning}                                                            & Tokenization & \multicolumn{1}{c|}{Normalization} & Stopword Removal \\ \hline
+	English  & Stripping tags,\newline punctuation,\newline multiple whitespaces,\newline numeric and shorts & Yes          & Lowercasing,\newline Stemming      & Yes              \\ \hline
+	Chinese  & \multicolumn{1}{c|}{\texttt{[\textasciicircum \textbackslash u4E00-\textbackslash u9FFF]}}    & Yes          & \multicolumn{1}{c|}{No}            & No               \\ \hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,48 @@
+\beamer@sectionintoc {1}{The Text Classification Problems}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{The Text Classification Problems}{3}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{1}{Background}{4}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{2}{Definition}{5}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{3}{Applications}{7}{0}{1}
+\beamer@sectionintoc {2}{Vector Space Models}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Different Types of Frequency Matrix}{8}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{1}{Similarity of Documents: The Term-Document Matrix}{10}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{2}{Similarity of Words: The Word-Context Matrix}{11}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{3}{Similarity of Relations: The Pair-Pattern Matrix}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Construction of Vector Space Models}{13}{0}{2}
+\beamer@sectionintoc {3}{From CopeOpi Scores to CopeOpi Vectors}{15}{0}{3}
+\beamer@subsectionintoc {3}{1}{CopeOpi Scores}{15}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{1}{What are CopeOpi scores?}{16}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{2}{How to compute CopeOpi scores?}{17}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{3}{The computation scheme of CopeOpi scores}{18}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{4}{The applications of CopeOpi scores}{21}{0}{3}
+\beamer@subsectionintoc {3}{2}{General CopeOpi Scores}{22}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{1}{Motivations for general CopeOpi scores}{23}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{2}{Why can CopeOpi scores be generalized?}{25}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{3}{How to generalize CopeOpi scores?}{26}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{4}{The computation scheme of general CopeOpi scores}{27}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{5}{Confidence in general CopeOpi scores}{29}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{6}{What are general CopeOpi Scores?}{33}{0}{3}
+\beamer@subsectionintoc {3}{3}{CopeOpi Vectors}{34}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{1}{Motivations for CopeOpi vectors}{35}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{2}{How to construct CopeOpi vectors?}{36}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{3}{The computation scheme of CopeOpi vectors}{37}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{4}{Customized CopeOpi vectors}{44}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{5}{What are CopeOpi vectors?}{47}{0}{3}
+\beamer@sectionintoc {4}{Experiments}{48}{0}{4}
+\beamer@subsectionintoc {4}{1}{Flowchart and Settings}{49}{0}{4}
+\beamer@subsubsectionintoc {4}{1}{1}{Sampling and Preprocessing}{51}{0}{4}
+\beamer@subsubsectionintoc {4}{1}{2}{Feature Selection and Feature Transformation}{52}{0}{4}
+\beamer@subsubsectionintoc {4}{1}{3}{Training Classifiers}{53}{0}{4}
+\beamer@subsubsectionintoc {4}{1}{4}{Testing and Evaluation}{54}{0}{4}
+\beamer@subsectionintoc {4}{2}{Experiments: Sentiment Analysis}{55}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{1}{Datasets}{56}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{2}{Experiments Datasets}{57}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{3}{Results and Observations}{58}{0}{4}
+\beamer@subsectionintoc {4}{3}{Experiments: Topic Categorization}{66}{0}{4}
+\beamer@subsubsectionintoc {4}{3}{1}{Datasets}{67}{0}{4}
+\beamer@subsubsectionintoc {4}{3}{2}{Experiments Datasets}{67}{0}{4}
+\beamer@subsubsectionintoc {4}{3}{3}{Results and Observations}{69}{0}{4}
+\beamer@subsectionintoc {4}{4}{Summary}{77}{0}{4}
+\beamer@sectionintoc {5}{Conclusions and Future Works}{81}{0}{5}
+\beamer@subsectionintoc {5}{1}{Conclusions}{81}{0}{5}
+\beamer@subsectionintoc {5}{2}{Future Works}{83}{0}{5}

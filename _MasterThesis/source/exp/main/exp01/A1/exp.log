@@ -1,0 +1,9 @@
+2017-09-03 09:01:17 [INFO] Load data: exp\main\exp01\A1\data\data.A1.train
+2017-09-03 09:01:17 [INFO] Load data: exp\main\exp01\A1\data\data.A1.test
+2017-09-03 09:01:28 [INFO]  7500, 7500
+2017-09-03 09:01:28 [INFO]  7500, 7500
+2017-09-03 09:01:28 [INFO] [0, 1]
+2017-09-03 09:01:28 [INFO] [0, 1]
+
+2017-09-03 09:01:28 [INFO] START EXP 1/1: SVM_copeopi
+2017-09-03 09:01:28 [INFO] Init Feature

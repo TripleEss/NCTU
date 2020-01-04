@@ -1,0 +1,62 @@
+(*2f*)
+fun revl xs=foldl (fn (x,xs)=>x::xs) [] xs;
+
+(*3a*)
+fun n2c 0 f x=x
+     | n2c n f x=f (n2c (n-1) f x);
+
+(*3b*)
+fun c2n c=c (fn y=>y+1) 0;
+
+(*3c*)
+infix 6 ++;
+fun (cm ++ cn) f x=cm f (cn f x);
+
+(*3d*)
+infix 7 **;
+fun (cm ** cn) f x=cm (cn f) x;
+
+(*4b*)
+datatype Nat=Zero | Succ of Nat;
+fun n2N 0=Zero
+   | n2N n=(Succ (n2N (n-1)));
+
+(*4c*)
+fun N2n Zero=0
+   | N2n (Succ (Ns))=1+(N2n Ns);
+
+(*4d*)
+infix 6 +++;
+fun Nm +++ Nn
+=let 
+   fun append Zero=Nn
+   | append (Succ Ns)=(Succ (append Ns))
+in append Nm end;
+
+(*4e*)
+infix 7 ***;
+fun Nm *** Nn
+=let
+   fun append1 Zero acc=acc
+   | append1 (Succ Ns) acc=(Succ (append1 Ns acc))
+   fun append2 Zero N acc=acc
+   | append2 (Succ Ms) N acc=append2 Ms N (append1 N acc)
+in append2 Nm Nn Zero end;
+
+(*4f*)
+fun !!! Zero=Succ Zero
+| !!! (N as (Succ Ns))=N***(!!! Ns);
+
+(*4g*)
+fun ! n=(N2n o !!! o n2N) n;
+
+(*5*)
+datatype etree= Leaf of int | Node of etree*(int*int->int)*etree;
+
+    fun mketree (x::[])=(Leaf ((ord x)-(ord #"0")),[])
+   | mketree (x::xs)=if ((ord x)>=(ord #"0")) then (Leaf ((ord x)-(ord #"0")),xs)
+                                else (Node (#1 (mketree xs)
+                                ,(fn #"+"=>op+(_,0) | #"-"=>op-(_,0) | #"*" =>op*(_,1) | #"/" => op div(_,1) | #"%" => op mod(_,10))
+                                ,#1 (mketree (#2 (mketree xs)))),#2 (mketree (#2 (mketree xs))));
+
+

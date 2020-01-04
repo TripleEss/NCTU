@@ -1,0 +1,79 @@
+[
+    {
+        "name": "kNN_glove_200",
+        "feature": {
+            "type": "glove",
+            "init_kwargs": {
+                "vector_size": 200,
+                "fout": "glove200"
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_glove_200",
+        "feature": {
+            "type": "glove",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "glove200"
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_glove_200",
+        "feature": {
+            "type": "glove",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "glove200"
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_glove_200",
+        "feature": {
+            "type": "glove",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "glove200"
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_glove_200",
+        "feature": {
+            "type": "glove",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "glove200"
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    }
+]

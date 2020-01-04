@@ -1,0 +1,67 @@
+<html>
+<body>
+<h2>Click a button to compute the values of McCarthy's 91 function</h2>
+<br> 
+<script language="JavaScript">
+document.write("</br>")
+
+var totalcounter;
+
+function func2()
+{	
+	var input=prompt("Enter an integer:");
+	var n=+input;
+	if(n>=0||n<0)
+	{
+		var counter;
+		totalcounter=1;
+ 		for(counter=1; counter>0; counter--)
+		{
+                    		if(n<=100)
+   			{
+				totalcounter+=2; 
+				counter+=2; 
+				n+=11; 
+			}
+                    		else
+			{
+				n-=10;
+			}
+		}
+		alert("f("+input+")="+n+"\nFunction f is called "+totalcounter+" times.");
+	}
+	
+	else alert(input+"-Illegal input");
+}
+
+function func1_1(n)
+{
+	if(n>100)
+	{
+		return n-10; 
+	}
+                    else
+	{
+		totalcounter+=2;
+		return func1_1(func1_1(n+11));
+	}
+}
+
+function func1()
+{                   
+	totalcounter=1;
+	var input=prompt("Enter an integer:");
+                    var n=+input
+	if(n>=0||n<0) 
+		alert("f("+input+")="+func1_1(n)+"\nFunction f is called "+totalcounter+" times.");
+                    else 
+		alert(input+"-Illegal input")                   
+}
+
+</script>
+<form>
+<input type=button value="Functional style computaiotion" onClick=func1()>
+<input type=button value="Imperative style computaiotion" onClick=func2()>
+</form>
+</body>
+</html>

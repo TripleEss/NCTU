@@ -1,0 +1,17 @@
+\begin{table}[h]
+\footnotesize
+\centering
+\caption{Experiment settings of features}
+\label{tab:flow_features}
+\begin{tabular}{|l|m{0.495\textwidth}|m{0.09\textwidth}|c|}
+	\hline
+	\multicolumn{1}{|c|}{Feature} & \multicolumn{1}{c|}{Implementaion}                                                                            & \multicolumn{1}{c|}{Feature Selection} & Normalized \\ \hline
+	CopeOpi                       & Our implementaion                                                                                             & \texttt{min\_count=5}                  & Yes        \\ \hline
+	BOW                           & \texttt{sklearn.feature\_extraction.text.CountVectorizer}                                                     & \texttt{min\_df=0.001}                 & No         \\ \hline
+	BOW(LSI)                      & \texttt{sklearn.feature\_extraction.text.CountVectorizer}\newline \texttt{sklearn.decomposition.TruncatedSVD} & \texttt{min\_df=0.001}                 & Yes        \\ \hline
+	TF-IDF                        & \texttt{sklearn.feature\_extraction.text.TfidfVectorizer}                                                     & \texttt{min\_df=0.001}                 & Yes        \\ \hline
+	TF-IDF(LSI)                   & \texttt{sklearn.feature\_extraction.text.TfidfVectorizer}\newline \texttt{sklearn.decomposition.TruncatedSVD} & \texttt{min\_df=0.001}                 & Yes        \\ \hline
+	Word2vec                      & \texttt{gensim.models.word2vec}                                                                               & \texttt{min\_count=5}                  & Yes        \\ \hline
+	GloVe                         & Stanford GloVe Project                                                                                        & \texttt{min\_count=5}                  & Yes        \\ \hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,98 @@
+[
+    {
+        "mode": "train_test_split",
+        "train_size": 0.6,
+        "work_dir": "exp\\main\\exp01\\B1",
+        "files": [
+            "exp\\main\\exp01\\B1\\data\\data.B1.train",
+            "exp\\main\\exp01\\B1\\data\\data.B1.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+        ],
+        "lang": "en",
+        "preproc": {
+            "tokenized": true
+        }
+    },
+    {
+        "mode": "train_test_split",
+        "train_size": 0.6,
+        "work_dir": "exp\\main\\exp01\\B2",
+        "files": [
+            "exp\\main\\exp01\\B2\\data\\data.B2.train",
+            "exp\\main\\exp01\\B2\\data\\data.B2.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "lang": "en",
+        "preproc": {
+            "tokenized": true
+        }
+    },
+    {
+        "mode": "train_test_split",
+        "train_size": 0.6,
+        "work_dir": "exp\\main\\exp01\\B3",
+        "files": [
+            "exp\\main\\exp01\\B3\\data\\data.B3.train",
+            "exp\\main\\exp01\\B3\\data\\data.B3.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2,
+            3,
+            4
+        ],
+        "lang": "en",
+        "preproc": {
+            "tokenized": true
+        }
+    },
+    {
+        "mode": "train_test_split",
+        "train_size": 0.6,
+        "work_dir": "exp\\main\\exp01\\B4",
+        "files": [
+            "exp\\main\\exp01\\B4\\data\\data.B4.train",
+            "exp\\main\\exp01\\B4\\data\\data.B4.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "lang": "en",
+        "preproc": {
+            "tokenized": true
+        }
+    }
+]

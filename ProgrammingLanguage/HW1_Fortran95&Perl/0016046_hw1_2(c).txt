@@ -1,0 +1,7 @@
+0016046_h1_2(c)
+(1) programmer's productivity
+functional-style>imperative-style
+(2) time complexity
+     O(functional-style)=O(imperative-style)
+(3)space complexity
+     O(functional-style)>=O(imperative-style)

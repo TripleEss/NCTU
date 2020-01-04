@@ -1,0 +1,53 @@
+\chapter{Introduction}
+\par In the era of technology, millions of digital texts such as emails, social media posts, product reviews, news articles and websites are generated every day. To derive useful information from these textual data, text mining has become a popular area of both research and business. One of the most important task of text mining is text classification.
+
+\section{The Text Classification Problems}
+\par Text classification, or text categorization, is a task of assigning a document\footnote{We use the term \textit{document} in general sense as textual data.} to a set of predefined classes, categories, or labels.
+\par As with many other classification tasks, the text classification problems have traditionally been solved manually, or by knowledge engineering approaches with hand-crafted classification rules. However, both methods are expensive to scale due to the needs of skilled labors and expert knowledge. Therefore, to deal with a large number of documents and a great diversity of contents, most recent works of text classificatioin focus on machine learning approaches, which require only a set of labeled training instances which costs less human efforts\cite{feldman2007tm,manning2008ir}.
+
+\subsection{Definition}
+In a text classification problem, we are given a document space $\mathbb{X}$ and a set of predefined classes $\mathbb{C}$. The task of text classification can be defined as an unknown assignment function.
+\begin{equation*}
+f: \mathbb{X} \times \mathbb{C} \rightarrow \{\mathtt{True},\mathtt{False}\}
+\end{equation*}
+which assigns each pair $\langle d,c \rangle \in \mathbb{X} \times \mathbb{C}$ a Boolean value $\mathtt{True}$ if the document $d$ is in the class $c$ and $\mathtt{False}$ otherwise.
+~\newline
+\partopic{Machine Learning for Text Classification}
+\par By using a machine learning algorithm $\Gamma$ with a labeled training set $\mathbb{D}=\{ \langle d,c \rangle \where \langle d,c \rangle \in \mathbb{X} \times \mathbb{C} \}$, we wish to learn a classier, or classification function $\gamma$ which approximates the unknown assignment function $f$ as close as possible\cite{sebastiani2002tc}.
+\begin{equation*}
+\begin{gathered}
+	\Gamma(\mathbb{D}) = \gamma
+\\
+	\gamma: \mathbb{X} \times \mathbb{C} \rightarrow \{\texttt{True},\texttt{False}\} \approx f
+\end{gathered}
+\end{equation*}
+This type of machine learning is a form of supervised learning since a labeled training set serves as a supervisor directing the learning process.
+
+\subsection{Applications}
+Typically, the document space $\mathbb{X}$ can be any kinds of texts and the classes $\mathbb{C}$ are defined for the user needs, therefore text classification has a wide variety of applications in text mining\cite{aggarwal2012tc}.
+~\newline
+~\newline
+\partopic{Document Organization and Information Retrieval}
+\par When the documents are news articles, scientific literature, blog collections, etc., users may want these documents to be grouped for different topics. A hierarchical catalogue is especially useful for searching and retrieval.
+~\newline
+~\newline
+\partopic{Sentiment Analysis and Opinion Mining}
+\par When the documents are social media posts and customer reviews, users may want these comments to be identified for opinioned or non-opinioned, positive or negative. The mined opinions are helpful for business marketing.
+~\newline
+~\newline
+\partopic{Email Routing and Spam Filtering}
+\par When the documents are emails, users may want these messages to be routed for different subjects, be sorted for different priorities, or be filtered for spam or ham. It is more convenient to check out emails in classified folders than in a messy inbox.
+
+
+\section{Thesis Outlines}
+In this chapter, we have been talking about the motivation of this thesis, i.e., the text classification problems. The remaining chapters are organized as follows:
+\begin{itemize}
+\item Chapter 2: Related Works.\\
+We review the techniques for text classification, including vector space models and machine learning algorithms.
+\item Chapter 3: Methodology: CopeOpi Vectors.\\
+We first introduce CopeOpi scores, then propose augmented CopeOpi scores and CopeOpi vectors step by step.
+\item Chapter 4: Experiments and Results.\\
+We verify the functionality of CopeOpi vectors by a series of text classification problems, including sentiment analysis and topic categorization, in both English and Chinese.
+\item Chapter 5: Conclusions and Future Works.\\
+We make conclusions about this thesis and point out some future directions of research about CopeOpi vectors.
+\end{itemize}

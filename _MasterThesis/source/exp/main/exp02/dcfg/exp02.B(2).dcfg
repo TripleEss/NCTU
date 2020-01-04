@@ -1,0 +1,87 @@
+[
+    {
+        "mode": "train_test_split",
+        "train_size": 0.5,
+        "work_dir": "exp\\main\\exp02\\B1",
+        "files": [
+            "exp\\main\\exp02\\B1\\data\\data.B1.train",
+            "exp\\main\\exp02\\B1\\data\\data.B1.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+        ],
+        "lang": "zh",
+        "preproc": {
+            "tokenized": true
+        }
+    },
+    {
+        "mode": "train_test_split",
+        "train_size": 0.5,
+        "work_dir": "exp\\main\\exp02\\B2",
+        "files": [
+            "exp\\main\\exp02\\B2\\data\\data.B2.train",
+            "exp\\main\\exp02\\B2\\data\\data.B2.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ],
+        "lang": "zh",
+        "preproc": {
+            "tokenized": true
+        }
+    },
+    {
+        "mode": "train_test_split",
+        "train_size": 0.5,
+        "work_dir": "exp\\main\\exp02\\B3",
+        "files": [
+            "exp\\main\\exp02\\B3\\data\\data.B3.train",
+            "exp\\main\\exp02\\B3\\data\\data.B3.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "lang": "zh",
+        "preproc": {
+            "tokenized": true
+        }
+    }
+]

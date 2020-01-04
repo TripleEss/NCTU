@@ -1,0 +1,47 @@
+(2a)
+8+0=8 , the value evaluated in first (take 9 ints) will be memerized
+(8+1)*8/2+(8+1)*8/2=36+36=72, the value evaluated in first (take 9 ints) will not be memerized
+
+(3a)
+(take 9 ints)
+=(take 9 (cons-stream 1 (map-stream 1+ ints))
+=
+
+(4a)
+t->£f                    s->£f
+    /   \                       /   \
+   f      £f                   x     @
+        /   \                       /   \
+       x    @                  @    x
+            /   \                /   \
+           f     @            *     x
+                /   \
+               f      x
+
+(4b)
+(t s)->£f                ((t s) 2)->@                     @                 
+         /   \                               /   \                   /   \
+       x     @                         @ - @               @ - 4
+             /   \                        /     /   \            /
+          @ - @                   *     @ - 2        *
+          /    /   \                          /
+         *   @ - x                      *
+             /
+           *
+
+(6a)
+the evaluated value will not be memorized
+
+(7c)
+hamming->:
+                    /   \
+                  1      :
+                        /   \
+                      2      :
+                            /   \
+                          3      :
+                               /   \
+                             4
+
+(8a)
+the big graph can not be reduced until it stop growing

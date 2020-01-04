@@ -1,0 +1,91 @@
+
+
+\subsection{Different Types of Frequency Matrix}
+
+\begin{frame}{The Vector Space Models}
+	\begin{itemize}
+	\item To teach machines to understand our languages, we need to design a representation which they can manipulate
+	\item Vector space model (VSM) is an algebraic model for \alert{representing texts as vectors}
+		\begin{itemize}
+		\item Based on a series of statistical semantics hypothesis: takes event frequencies in corpora as clues to discover latent semantic
+		\item Derived vectors from a \alert{frequency matrix}
+			\begin{itemize}
+			\item The structure of the matrix relates to the scope of application of the vector space model\cite{Turney2010vsm}
+			\end{itemize}	
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsubsection{Similarity of Documents: The Term-Document Matrix}
+\begin{frame}{Similarity of Documents: The Term-Document Matrix}
+\begin{block}{Hypothesis (Bag-of-words Hypothesis)}
+The frequencies of words in a document tend to indicate the relevance of the document to a query\cite{Salton1975vsmh1}.
+\end{block}
+If documents and queries have similar column vectors in a term-document matrix, then they tend to have similar meanings.\\
+\scalebox{0.7}{
+\begin{tabular}{cccccc}
+                       &                               & \multicolumn{4}{c}{Documents}                                                                                             \\
+                       &                               & $d_1$                               & $d_2$                               & $\cdots$              &                       \\ \cline{3-6} 
+\multirow{3}{*}{Terms} & \multicolumn{1}{c|}{$t_1$}    & \multicolumn{1}{c|}{$f{d_1}_{t_1}$} & \multicolumn{1}{c|}{$f{d_2}_{t_1}$} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+                       & \multicolumn{1}{c|}{$t_2$}    & \multicolumn{1}{c|}{$f{d_1}_{t_2}$} & \multicolumn{1}{c|}{$f{d_2}_{t_2}$} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+                       & \multicolumn{1}{c|}{$\vdots$} & \multicolumn{1}{c|}{}               & \multicolumn{1}{c|}{}               & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+\multicolumn{1}{l}{}   & \multicolumn{1}{l|}{}         & \multicolumn{1}{l|}{}               & \multicolumn{1}{l|}{}               & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{3-6} 
+\end{tabular}}
+\end{frame}
+
+\subsubsection{Similarity of Words: The Word-Context Matrix}
+\begin{frame}{Similarity of Words: The Word-Context Matrix}
+\begin{block}{Hypothesis (Distributional Hypothesis)}
+Words that occur in similar contexts tend to have similar meanings\cite{Harris1954vsmh2,Firth1957vsmh2}.
+\end{block}
+If words have similar row vectors in a word-context matrix, then they tend to have similar meanings.\\
+\scalebox{0.7}{
+\begin{tabular}{cccccc}
+                       &                               & \multicolumn{4}{c}{Contexts}                                                                                              \\
+                       &                               & $c_1$                               & $c_2$                               & $\cdots$              &                       \\ \cline{3-6} 
+\multirow{3}{*}{Words} & \multicolumn{1}{c|}{$w_1$}    & \multicolumn{1}{c|}{$f{c_1}_{w_1}$} & \multicolumn{1}{c|}{$f{c_2}_{w_1}$} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+                       & \multicolumn{1}{c|}{$w_2$}    & \multicolumn{1}{c|}{$f{c_1}_{w_2}$} & \multicolumn{1}{c|}{$f{c_2}_{w_2}$} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+                       & \multicolumn{1}{c|}{$\vdots$} & \multicolumn{1}{c|}{}               & \multicolumn{1}{c|}{}               & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+\multicolumn{1}{l}{}   & \multicolumn{1}{l|}{}         & \multicolumn{1}{l|}{}               & \multicolumn{1}{l|}{}               & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{3-6} 
+\end{tabular}}
+\end{frame}
+
+\subsubsection{Similarity of Relations: The Pair-Pattern Matrix}
+\begin{frame}[shrink=10]{Similarity of Relations: The Pair-Pattern Matrix}
+\begin{block}{Hypothesis (Extended Distributional Hypothesis)}
+Patterns co-occurring with similar word-pairs tend to have similar meanings\cite{Lin2001vsmh3}.
+\end{block}
+If patterns have similar column vectors in a pair-pattern matrix, then they tend to express similar semantic relations.
+\begin{block}{Hypothesis (Latent Relation Hypothesis)}
+Word-pairs co-occurring in similar patterns tend to have similar semantic relations\cite{Turney2003vsmh4}.
+\end{block}
+If word-pairs have similar row vectors in a pair-pattern matrix, then they tend to have similar semantic relations.\\
+\scalebox{0.7}{
+\begin{tabular}{cccccc}
+                            &                                             & \multicolumn{4}{c}{Patterns}                                                                                                                                \\
+                            &                                             & $p_1$                                                & $p_2$                                                & $\cdots$              &                       \\ \cline{3-6} 
+\multirow{3}{*}{Word-pairs} & \multicolumn{1}{c|}{$(w_1^a\text{:}w_1^b)$} & \multicolumn{1}{c|}{$f{p_1}_{(w_1^a\text{:}w_1^b)}$} & \multicolumn{1}{c|}{$f{p_2}_{(w_1^a\text{:}w_1^b)}$} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+                            & \multicolumn{1}{c|}{$(w_2^a\text{:}w_2^b)$} & \multicolumn{1}{c|}{$f{p_1}_{(w_2^a\text{:}w_2^b)}$} & \multicolumn{1}{c|}{$f{p_2}_{(w_2^a\text{:}w_2^b)}$} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+                            & \multicolumn{1}{c|}{$\vdots$}               & \multicolumn{1}{c|}{}                                & \multicolumn{1}{c|}{}                                & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \cline{3-6} 
+\multicolumn{1}{l}{}        & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{}                                & \multicolumn{1}{l|}{}                                & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{3-6} 
+\end{tabular}}
+\end{frame}
+
+\subsection{Construction of Vector Space Models}
+\begin{frame}{Construction of Vector Space Models}
+	\begin{itemize}
+	\item Linguistic Processing
+		\begin{itemize}
+		\item Tokenization
+		\item Normalization
+		\item Annotation
+		\end{itemize}
+	\item Mathematical Processing\cite{Lowe2001}
+		\begin{itemize}
+		\item Building the frequency matrix
+		\item Weighting the elements
+		\item Dimensionality reduction
+		\item Comparing the similarities
+		\end{itemize}
+	\end{itemize}
+\end{frame}

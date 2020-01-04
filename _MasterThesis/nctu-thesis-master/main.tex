@@ -1,0 +1,186 @@
+\documentclass[watermark,final]{thesis}  % draft mode (default)
+%\documentclass[review]{thesis}  % review mode (show contents & reference only)
+%\documentclass[watermark,final]{thesis}  % final mode (version for library)
+
+%-------------------------------------------------------------------------------
+% Package Loading
+%-------------------------------------------------------------------------------
+
+% font
+\usepackage{fontspec}
+\setmonofont[Scale=0.8]{Droid Sans Mono}
+
+% spacing
+\newcommand{\eqlineskip}{0.3\baselineskip}
+\newcommand{\resultfigwidth}{0.78\textwidth}
+
+% title format
+\newcommand{\partopic}[1]{\noindent\textbf{#1}}
+
+% math
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\DeclareMathOperator{\where}{\mid\,}
+\DeclareMathOperator{\divby}{/}
+\DeclareMathOperator{\avg}{avg}
+\DeclareMathOperator{\precision}{precision}
+\DeclareMathOperator{\recall}{recall}
+\newcommand{\fscore}{F\textsubscript{1}-score}
+
+% list
+\usepackage{enumitem}
+\setlist{nosep}
+
+% table
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tablefootnote}
+\renewcommand{\arraystretch}{1.35}
+
+% caption
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\newcommand{\tblskip}{3pt}
+\captionsetup[table]{skip=\tblskip}
+\captionsetup[subtable]{font=small,labelfont=bf,labelformat=parens,skip=\tblskip}
+
+% footnote
+\usepackage[bottom]{footmisc}
+
+
+% draw
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+% box
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable,theorems}
+\newtcbtheorem[number within=section]{scheme}{Computation Scheme}{
+	skin=enhanced jigsaw,
+	breakable=true,
+	beforeafter skip=\baselineskip,
+	toptitle=1mm,
+	bottomtitle=1mm,
+	fonttitle=\bfseries,
+	colframe=black!75!blue,
+	colback=blue!5!white,
+}{th}
+\newtcbtheorem[number within=section]{hypothesis}{Hypothesis}{
+	skin=enhanced jigsaw,
+	breakable=true,
+	beforeafter skip=\baselineskip,
+	toptitle=1mm,
+	bottomtitle=1mm,
+	fonttitle=\bfseries,
+	colframe=black!75!green,
+	colback=green!5!white,
+}{th}
+
+%-------------------------------------------------------------------------------
+% Configuration
+%-------------------------------------------------------------------------------
+
+% 填寫題目, 作者, 指導教授, 學校, 系所, 日期等資訊
+\input{config/frontmatters}
+
+% 修改 thesis.cls 的預設字型
+\input{config/fonts}
+
+\begin{document}
+
+% Show repeated author names in bibliography when using IEEEtran.bst
+% Comment out this line if you don't set IEEEtran in \bibliographystyle{}
+\bstctlcite{IEEEexample:BSTcontrol}
+
+% Generate cover, title, authorization, approval and copyright pages
+\maketitle
+
+%-------------------------------------------------------------------------------
+% Abstract
+%-------------------------------------------------------------------------------
+
+% 中文摘要
+\input{abs/abstract_zh}
+
+% 英文摘要
+\input{abs/abstract_en}
+
+%-------------------------------------------------------------------------------
+% Acknowledgement
+%-------------------------------------------------------------------------------
+
+% 誌謝
+\input{ack/ack}
+
+% 題獻頁 (Only shown in the final mode of a PhD dissertation)
+%\input{ack/dedication}
+
+%-------------------------------------------------------------------------------
+% 目錄
+%-------------------------------------------------------------------------------
+
+% Generate 'Table of Contents', 'List of Figures', and 'List of Tables', and
+% Set page numbering to 'arabic'
+\maketocs
+
+%-------------------------------------------------------------------------------
+% Contents
+%-------------------------------------------------------------------------------
+
+% Set page numbering to 'arabic' (1, 2, 3, ...)
+\mainmatter
+
+% 內文, 請依照章節順序擺放
+\input{chapters/ch1/ch1_introduction.tex}
+\input{chapters/ch2/ch2_related.tex}
+\input{chapters/ch3/ch3_copeopivec.tex}
+\input{chapters/ch4/ch4_experiment.tex}
+\input{chapters/ch5/ch5_conclusion.tex}
+
+%-------------------------------------------------------------------------------
+% 參考文獻
+%-------------------------------------------------------------------------------
+
+% Set bib style
+\bibliographystyle{IEEEtran}
+
+% Add Bibliography to "Table of Contents"
+\addBibToContents
+
+% Usage:
+%   \bibliography{bib/bib1,bib/bib2,...,bib/bibN} % 注意: 不要有空格
+%
+% For IEEEtran users:
+%   DO NOT remove bib/BSTcontrol.bib when using IEEEtran.bst. The reason is that
+% when we cite two papers of the same (or similar) authors, IEEEtran.bst would
+% replace the author names with "------". To avoid this, we use BSTControl.bib
+% to set ctldash_repeated_names to 'no'.
+%
+% For non IEEEtran users:
+%   Please delete bib/ieeeBSTcontrol from \bibliography{}
+\bibliography{bib/ieeeBSTcontrol,bib/thesis}
+
+%-------------------------------------------------------------------------------
+% 附錄
+%-------------------------------------------------------------------------------
+
+% Start appendix
+%\appendix
+
+% Add appendicies to "Table of Contents"
+%\addAppxToContents
+
+% 請從此開始依序擺放附錄
+%\input{appx/1-appendix}
+
+%-------------------------------------------------------------------------------
+% 作者簡歷
+%-------------------------------------------------------------------------------
+
+% 簡歷 (Only shown in a PhD dissertation)
+%\input{author/cv}
+
+% 著作列表 (Only shown in a PhD dissertation)
+%\input{author/publications}
+
+\end{document}

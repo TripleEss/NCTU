@@ -1,0 +1,24 @@
+﻿  CMassSpringSystem.cpp
+MassSpringSystem\CMassSpringSystem.cpp(393): warning C4018: '<' : signed/unsigned mismatch
+MassSpringSystem\CMassSpringSystem.cpp(405): warning C4018: '<' : signed/unsigned mismatch
+MassSpringSystem\CMassSpringSystem.cpp(418): warning C4018: '<' : signed/unsigned mismatch
+MassSpringSystem\CMassSpringSystem.cpp(431): warning C4018: '<' : signed/unsigned mismatch
+  PyramidModel.cpp
+MassSpringSystem\PyramidModel.cpp(451): warning C4018: '<' : signed/unsigned mismatch
+MassSpringSystem\PyramidModel.cpp(514): warning C4018: '<' : signed/unsigned mismatch
+  Generating code
+  Finished generating code
+glui32.lib(glui.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_bitmap_img_data.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_bitmaps.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_button.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_checkbox.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_control.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_edittext.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_listbox.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_node.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_panel.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_spinner.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_string.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+glui32.lib(glui_window.obj) : warning LNK4204: 'D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+  ParticleSystem.vcxproj -> D:\nctu\ComputerAnimation\HW1\ParticleSystem\Release\ParticleSystem.exe

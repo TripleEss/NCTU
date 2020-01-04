@@ -1,0 +1,24 @@
+[
+    {
+        "mode": "train_test_split",
+        "train_size": 0.6,
+        "work_dir": "exp\\main\\exp01\\B2",
+        "files": [
+            "exp\\main\\exp01\\B2\\data\\data.B2.train",
+            "exp\\main\\exp01\\B2\\data\\data.B2.test"
+        ],
+        "cls_set": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "lang": "en",
+        "preproc": {
+            "tokenized": true
+        }
+    }
+]

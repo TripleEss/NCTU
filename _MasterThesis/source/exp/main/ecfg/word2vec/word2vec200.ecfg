@@ -1,0 +1,79 @@
+[
+    {
+        "name": "kNN_word2vec_200",
+        "feature": {
+            "type": "word2vec",
+            "init_kwargs": {
+                "size": 200,
+                "fout": "word2vec200"
+            },
+            "reshape_kwargs": {}
+        },
+        "classifier": {
+            "type": "kNN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NB_word2vec_200",
+        "feature": {
+            "type": "word2vec",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "word2vec200"
+        },
+        "classifier": {
+            "type": "NB",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "LR_word2vec_200",
+        "feature": {
+            "type": "word2vec",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "word2vec200"
+        },
+        "classifier": {
+            "type": "LR",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "SVM_word2vec_200",
+        "feature": {
+            "type": "word2vec",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "word2vec200"
+        },
+        "classifier": {
+            "type": "SVM",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    },
+    {
+        "name": "NN_word2vec_200",
+        "feature": {
+            "type": "word2vec",
+            "init_kwargs": {},
+            "reshape_kwargs": {},
+            "src": "word2vec200"
+        },
+        "classifier": {
+            "type": "NN",
+            "init_kwargs": {},
+            "fit_kwargs": {},
+            "predict_kwargs": {}
+        }
+    }
+]

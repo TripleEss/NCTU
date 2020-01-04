@@ -1,0 +1,243 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {1}{The Text Classification Problems}{3}{The Text Classification Problems}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{The Text Classification Problems}}\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\slideentry {1}{1}{1}{3/3}{The Text Classification Problems}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsubsectionentry {0}{1}{1}{1}{4}{Background}}
+\headcommand {\slideentry {1}{1}{2}{4/4}{The Text Classification Problems}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@subsubsectionentry {0}{1}{1}{2}{5}{Definition}}
+\headcommand {\slideentry {1}{1}{3}{5/5}{The Text Classification Problems}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {1}{1}{4}{6/6}{The Text Classification Problems}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsubsectionentry {0}{1}{1}{3}{7}{Applications}}
+\headcommand {\slideentry {1}{1}{5}{7/7}{The Text Classification Problems}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\sectionentry {2}{Vector Space Models}{8}{Vector Space Models}{0}}
+\headcommand {\beamer@sectionpages {3}{7}}
+\headcommand {\beamer@subsectionpages {3}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{8}{Different Types of Frequency Matrix}}\headcommand {\beamer@subsectionpages {8}{7}}
+\headcommand {\slideentry {2}{1}{1}{8/8}{Different Types of Frequency Matrix}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {2}{1}{2}{9/9}{Different Types of Frequency Matrix}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{1}{1}{10}{Similarity of Documents: The Term-Document Matrix}}
+\headcommand {\slideentry {2}{1}{3}{10/10}{Different Types of Frequency Matrix}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{1}{2}{11}{Similarity of Words: The Word-Context Matrix}}
+\headcommand {\slideentry {2}{1}{4}{11/11}{Different Types of Frequency Matrix}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{1}{3}{12}{Similarity of Relations: The Pair-Pattern Matrix}}
+\headcommand {\slideentry {2}{1}{5}{12/12}{Different Types of Frequency Matrix}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{13}{Construction of Vector Space Models}}\headcommand {\beamer@subsectionpages {8}{12}}
+\headcommand {\slideentry {2}{2}{1}{13/13}{Construction of Vector Space Models}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {2}{2}{2}{14/14}{Construction of Vector Space Models}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\sectionentry {3}{From CopeOpi Scores to CopeOpi Vectors}{15}{From CopeOpi Scores to CopeOpi Vectors}{0}}
+\headcommand {\beamer@sectionpages {8}{14}}
+\headcommand {\beamer@subsectionpages {13}{14}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{15}{CopeOpi Scores}}\headcommand {\beamer@subsectionpages {15}{14}}
+\headcommand {\slideentry {3}{1}{1}{15/15}{CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{1}{1}{16}{What are CopeOpi scores?}}
+\headcommand {\slideentry {3}{1}{2}{16/16}{CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{1}{2}{17}{How to compute CopeOpi scores?}}
+\headcommand {\slideentry {3}{1}{3}{17/17}{CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{1}{3}{18}{The computation scheme of CopeOpi scores}}
+\headcommand {\slideentry {3}{1}{4}{18/18}{CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {3}{1}{5}{19/19}{CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {3}{1}{6}{20/20}{CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{1}{4}{21}{The applications of CopeOpi scores}}
+\headcommand {\slideentry {3}{1}{7}{21/21}{CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{22}{General CopeOpi Scores}}\headcommand {\beamer@subsectionpages {15}{21}}
+\headcommand {\slideentry {3}{2}{1}{22/22}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{1}{23}{Motivations for general CopeOpi scores}}
+\headcommand {\slideentry {3}{2}{2}{23/23}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {3}{2}{3}{24/24}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{2}{25}{Why can CopeOpi scores be generalized?}}
+\headcommand {\slideentry {3}{2}{4}{25/25}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{3}{26}{How to generalize CopeOpi scores?}}
+\headcommand {\slideentry {3}{2}{5}{26/26}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{4}{27}{The computation scheme of general CopeOpi scores}}
+\headcommand {\slideentry {3}{2}{6}{27/27}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {3}{2}{7}{28/28}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{5}{29}{Confidence in general CopeOpi scores}}
+\headcommand {\slideentry {3}{2}{8}{29/29}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {3}{2}{9}{30/30}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {3}{2}{10}{31/31}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {3}{2}{11}{32/32}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{6}{33}{What are general CopeOpi Scores?}}
+\headcommand {\slideentry {3}{2}{12}{33/33}{General CopeOpi Scores}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{34}{CopeOpi Vectors}}\headcommand {\beamer@subsectionpages {22}{33}}
+\headcommand {\slideentry {3}{3}{1}{34/34}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{3}{1}{35}{Motivations for CopeOpi vectors}}
+\headcommand {\slideentry {3}{3}{2}{35/35}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{3}{2}{36}{How to construct CopeOpi vectors?}}
+\headcommand {\slideentry {3}{3}{3}{36/36}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{3}{3}{37}{The computation scheme of CopeOpi vectors}}
+\headcommand {\slideentry {3}{3}{4}{37/37}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\slideentry {3}{3}{5}{38/38}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {3}{3}{6}{39/39}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\slideentry {3}{3}{7}{40/40}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {3}{3}{8}{41/41}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\slideentry {3}{3}{9}{42/42}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {3}{3}{10}{43/43}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{3}{4}{44}{Customized CopeOpi vectors}}
+\headcommand {\slideentry {3}{3}{11}{44/44}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\slideentry {3}{3}{12}{45/45}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {3}{3}{13}{46/46}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{3}{5}{47}{What are CopeOpi vectors?}}
+\headcommand {\slideentry {3}{3}{14}{47/47}{CopeOpi Vectors}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\sectionentry {4}{Experiments}{48}{Experiments}{0}}
+\headcommand {\beamer@sectionpages {15}{47}}
+\headcommand {\beamer@subsectionpages {34}{47}}
+\headcommand {\slideentry {4}{0}{1}{48/48}{}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{49}{Flowchart and Settings}}\headcommand {\beamer@subsectionpages {48}{48}}
+\headcommand {\slideentry {4}{1}{1}{49/49}{Flowchart and Settings}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\slideentry {4}{1}{2}{50/50}{Flowchart and Settings}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{1}{1}{51}{Sampling and Preprocessing}}
+\headcommand {\slideentry {4}{1}{3}{51/51}{Flowchart and Settings}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{1}{2}{52}{Feature Selection and Feature Transformation}}
+\headcommand {\slideentry {4}{1}{4}{52/52}{Flowchart and Settings}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{1}{3}{53}{Training Classifiers}}
+\headcommand {\slideentry {4}{1}{5}{53/53}{Flowchart and Settings}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{1}{4}{54}{Testing and Evaluation}}
+\headcommand {\slideentry {4}{1}{6}{54/54}{Flowchart and Settings}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{55}{Experiments: Sentiment Analysis}}\headcommand {\beamer@subsectionpages {49}{54}}
+\headcommand {\slideentry {4}{2}{1}{55/55}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{2}{1}{56}{Datasets}}
+\headcommand {\slideentry {4}{2}{2}{56/56}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{2}{2}{57}{Experiments Datasets}}
+\headcommand {\slideentry {4}{2}{3}{57/57}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {57}{57}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{2}{3}{58}{Results and Observations}}
+\headcommand {\slideentry {4}{2}{4}{58/58}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\slideentry {4}{2}{5}{59/59}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\slideentry {4}{2}{6}{60/60}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {60}{60}}
+\headcommand {\slideentry {4}{2}{7}{61/61}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {61}{61}}
+\headcommand {\slideentry {4}{2}{8}{62/62}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\slideentry {4}{2}{9}{63/63}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\slideentry {4}{2}{10}{64/64}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {4}{2}{11}{65/65}{Experiments: Sentiment Analysis}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{66}{Experiments: Topic Categorization}}\headcommand {\beamer@subsectionpages {55}{65}}
+\headcommand {\slideentry {4}{3}{1}{66/66}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{3}{1}{67}{Datasets}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{3}{2}{67}{Experiments Datasets}}
+\headcommand {\slideentry {4}{3}{2}{67/67}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\slideentry {4}{3}{3}{68/68}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {68}{68}}
+\headcommand {\beamer@subsubsectionentry {0}{4}{3}{3}{69}{Results and Observations}}
+\headcommand {\slideentry {4}{3}{4}{69/69}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {69}{69}}
+\headcommand {\slideentry {4}{3}{5}{70/70}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {70}{70}}
+\headcommand {\slideentry {4}{3}{6}{71/71}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {71}{71}}
+\headcommand {\slideentry {4}{3}{7}{72/72}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {72}{72}}
+\headcommand {\slideentry {4}{3}{8}{73/73}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {73}{73}}
+\headcommand {\slideentry {4}{3}{9}{74/74}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {74}{74}}
+\headcommand {\slideentry {4}{3}{10}{75/75}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {75}{75}}
+\headcommand {\slideentry {4}{3}{11}{76/76}{Experiments: Topic Categorization}{0}}
+\headcommand {\beamer@framepages {76}{76}}
+\headcommand {\beamer@subsectionentry {0}{4}{4}{77}{Summary}}\headcommand {\beamer@subsectionpages {66}{76}}
+\headcommand {\slideentry {4}{4}{1}{77/77}{Summary}{0}}
+\headcommand {\beamer@framepages {77}{77}}
+\headcommand {\slideentry {4}{4}{2}{78/78}{Summary}{0}}
+\headcommand {\beamer@framepages {78}{78}}
+\headcommand {\slideentry {4}{4}{3}{79/79}{Summary}{0}}
+\headcommand {\beamer@framepages {79}{79}}
+\headcommand {\slideentry {4}{4}{4}{80/80}{Summary}{0}}
+\headcommand {\beamer@framepages {80}{80}}
+\headcommand {\sectionentry {5}{Conclusions and Future Works}{81}{Conclusions and Future Works}{0}}
+\headcommand {\beamer@sectionpages {48}{80}}
+\headcommand {\beamer@subsectionpages {77}{80}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{81}{Conclusions}}\headcommand {\beamer@subsectionpages {81}{80}}
+\headcommand {\slideentry {5}{1}{1}{81/81}{Conclusions}{0}}
+\headcommand {\beamer@framepages {81}{81}}
+\headcommand {\slideentry {5}{1}{2}{82/82}{Conclusions}{0}}
+\headcommand {\beamer@framepages {82}{82}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{83}{Future Works}}\headcommand {\beamer@subsectionpages {81}{82}}
+\headcommand {\slideentry {5}{2}{1}{83/83}{Future Works}{0}}
+\headcommand {\beamer@framepages {83}{83}}
+\headcommand {\slideentry {5}{2}{2}{84/84}{Future Works}{0}}
+\headcommand {\beamer@framepages {84}{84}}
+\headcommand {\slideentry {5}{2}{3}{85/85}{Future Works}{0}}
+\headcommand {\beamer@framepages {85}{85}}
+\headcommand {\slideentry {5}{2}{3}{85/86}{Future Works}{0}}
+\headcommand {\beamer@framepages {85}{86}}
+\headcommand {\slideentry {5}{2}{3}{85/87}{Future Works}{0}}
+\headcommand {\beamer@framepages {85}{87}}
+\headcommand {\slideentry {5}{2}{3}{85/88}{Future Works}{0}}
+\headcommand {\beamer@framepages {85}{88}}
+\headcommand {\slideentry {5}{2}{3}{85/89}{Future Works}{0}}
+\headcommand {\beamer@framepages {85}{89}}
+\headcommand {\slideentry {5}{2}{3}{85/90}{Future Works}{0}}
+\headcommand {\beamer@framepages {85}{90}}
+\headcommand {\beamer@partpages {1}{90}}
+\headcommand {\beamer@subsectionpages {83}{90}}
+\headcommand {\beamer@sectionpages {81}{90}}
+\headcommand {\beamer@documentpages {90}}
+\headcommand {\def \inserttotalframenumber {90}}

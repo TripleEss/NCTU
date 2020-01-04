@@ -1,0 +1,11 @@
+((((lambda (f)
+((lambda (x) (f (lambda (y) ((x x) y))))
+(lambda (x) (f (lambda (y) ((x x) y))))))
+(lambda (y) 
+(lambda (f) (f (lambda (z) ((y f) z))))))
+(lambda (f)
+(lambda (n)
+`(lambda (x)
+,(let loop ((n n))
+(if (= n 0) `1 `(* ,@(let loopx ((n n)) (if (= n 0) '() (cons 'x (loopx (- n 1)))))))))))) 5)
+   
